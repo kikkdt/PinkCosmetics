@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnPOS = new DevExpress.XtraBars.BarButtonItem();
@@ -39,6 +40,9 @@
             this.btnBrand = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddBrand = new DevExpress.XtraBars.BarButtonItem();
             this.btnInvoice = new DevExpress.XtraBars.BarButtonItem();
+            this.btnImportGoods = new DevExpress.XtraBars.BarButtonItem();
+            this.btnChangePassword = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLogOut = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonSell = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonSellGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonGoods = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -50,11 +54,10 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonAccount = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnImportGoods = new DevExpress.XtraBars.BarButtonItem();
-            this.btnChangePassword = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnLogOut = new DevExpress.XtraBars.BarButtonItem();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -94,6 +97,7 @@
             this.btnPOS.LargeWidth = 100;
             this.btnPOS.Name = "btnPOS";
             this.btnPOS.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnPOS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPOS_ItemClick);
             // 
             // btnGoods
             // 
@@ -155,6 +159,30 @@
             this.btnInvoice.LargeWidth = 100;
             this.btnInvoice.Name = "btnInvoice";
             this.btnInvoice.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // btnImportGoods
+            // 
+            this.btnImportGoods.Caption = "Nhập hàng";
+            this.btnImportGoods.Id = 21;
+            this.btnImportGoods.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnImportGoods.ImageOptions.SvgImage")));
+            this.btnImportGoods.LargeWidth = 100;
+            this.btnImportGoods.Name = "btnImportGoods";
+            // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.Caption = "Đổi mật khẩu";
+            this.btnChangePassword.Id = 22;
+            this.btnChangePassword.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnChangePassword.ImageOptions.SvgImage")));
+            this.btnChangePassword.LargeWidth = 100;
+            this.btnChangePassword.Name = "btnChangePassword";
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Caption = "Đăng xuất";
+            this.btnLogOut.Id = 23;
+            this.btnLogOut.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLogOut.ImageOptions.SvgImage")));
+            this.btnLogOut.LargeWidth = 100;
+            this.btnLogOut.Name = "btnLogOut";
             // 
             // ribbonSell
             // 
@@ -232,34 +260,17 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.btnChangePassword);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
-            // btnImportGoods
-            // 
-            this.btnImportGoods.Caption = "Nhập hàng";
-            this.btnImportGoods.Id = 21;
-            this.btnImportGoods.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnImportGoods.ImageOptions.SvgImage")));
-            this.btnImportGoods.LargeWidth = 100;
-            this.btnImportGoods.Name = "btnImportGoods";
-            // 
-            // btnChangePassword
-            // 
-            this.btnChangePassword.Caption = "Đổi mật khẩu";
-            this.btnChangePassword.Id = 22;
-            this.btnChangePassword.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnChangePassword.ImageOptions.SvgImage")));
-            this.btnChangePassword.LargeWidth = 100;
-            this.btnChangePassword.Name = "btnChangePassword";
-            // 
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.btnLogOut);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
-            // btnLogOut
+            // xtraTabbedMdiManager1
             // 
-            this.btnLogOut.Caption = "Đăng xuất";
-            this.btnLogOut.Id = 23;
-            this.btnLogOut.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLogOut.ImageOptions.SvgImage")));
-            this.btnLogOut.LargeWidth = 100;
-            this.btnLogOut.Name = "btnLogOut";
+            this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
+            this.xtraTabbedMdiManager1.HeaderButtons = DevExpress.XtraTab.TabButtons.Close;
+            this.xtraTabbedMdiManager1.HeaderButtonsShowMode = DevExpress.XtraTab.TabButtonShowMode.Always;
+            this.xtraTabbedMdiManager1.MdiParent = this;
             // 
             // FormMain
             // 
@@ -269,11 +280,13 @@
             this.Controls.Add(this.ribbonControl1);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pink Cosmetics";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,5 +319,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonAccount;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
     }
 }
