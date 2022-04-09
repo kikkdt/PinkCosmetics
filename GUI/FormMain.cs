@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace GUI
 {
@@ -15,6 +7,17 @@ namespace GUI
         public FormMain()
         {
             InitializeComponent();
+        }
+
+        private void BtnPOS_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormPOS formPOS = new FormPOS
+            {
+                MdiParent = this,
+                Dock = DockStyle.Fill,
+                FormBorderStyle = FormBorderStyle.None
+            };
+            formPOS.Show();
         }
     }
 }
