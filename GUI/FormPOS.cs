@@ -25,7 +25,7 @@ namespace GUI
             }
         }
 
-        private void ItemProductControl_Click(Control.ControlCollection controlCollection, SanPham_DTO product)
+        private void ItemProductControl_Click(Control.ControlCollection controlCollection, tb_SanPham product)
         {
             // If already have this product in the cart, increase the product quantity
             foreach (Control control in controlCollection)
@@ -49,7 +49,7 @@ namespace GUI
             }
         }
 
-        private void AddItemCart(SanPham_DTO product)
+        private void AddItemCart(tb_SanPham product)
         {
             ItemCartControl itemCart = new ItemCartControl(product)
             {
@@ -59,7 +59,7 @@ namespace GUI
             panelCart.Controls.Add(itemCart);
         }
 
-        private void IncreaseQuantity(SanPham_DTO product)
+        private void IncreaseQuantity(tb_SanPham product)
         {
             foreach (ItemCartControl item in panelCart.Controls)
             {
@@ -70,7 +70,7 @@ namespace GUI
             }
         }
 
-        private bool IsExistInCart(SanPham_DTO productAdd)
+        private bool IsExistInCart(tb_SanPham productAdd)
         {
             foreach (ItemCartControl item in panelCart.Controls)
             {

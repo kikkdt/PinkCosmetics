@@ -1,10 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbPinkCosmetics" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=KIKKDT-ZEPHYRUS;Initial Catalog=dbPinkCosmetics;User ID=sa" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="dbPinkCosmeticsConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbPinkCosmetics" Class="PinkCosmeticsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=KIKKDT-ZEPHYRUS;Initial Catalog=dbPinkCosmetics;User ID=sa" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="dbPinkCosmeticsConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tb_BangGia" Member="tb_BangGias">
     <Type Name="tb_BangGia">
       <Column Name="MaBangGia" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenBangGia" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
       <Column Name="DaXoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tb_BangGia_tb_ChiTietHDBan" Member="tb_ChiTietHDBans" ThisKey="MaBangGia" OtherKey="MaBangGia" Type="tb_ChiTietHDBan" />
       <Association Name="tb_BangGia_tb_GiaBan" Member="tb_GiaBans" ThisKey="MaBangGia" OtherKey="MaBangGia" Type="tb_GiaBan" />
     </Type>
   </Table>
@@ -20,10 +21,11 @@
     <Type Name="tb_ChiTietHDBan">
       <Column Name="MaHDBan" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaSanPham" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaBangGia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DonGia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="ThanhTien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Association Name="tb_HoaDonBan_tb_ChiTietHDBan" Member="tb_HoaDonBan" ThisKey="MaHDBan" OtherKey="MaHDBan" Type="tb_HoaDonBan" IsForeignKey="true" />
+      <Association Name="tb_BangGia_tb_ChiTietHDBan" Member="tb_BangGia" ThisKey="MaBangGia" OtherKey="MaBangGia" Type="tb_BangGia" IsForeignKey="true" />
       <Association Name="tb_SanPham_tb_ChiTietHDBan" Member="tb_SanPham" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="tb_SanPham" IsForeignKey="true" />
     </Type>
   </Table>
@@ -57,7 +59,6 @@
       <Column Name="GiamGia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="ThanhTien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="tb_HoaDonBan_tb_ChiTietHDBan" Member="tb_ChiTietHDBans" ThisKey="MaHDBan" OtherKey="MaHDBan" Type="tb_ChiTietHDBan" />
       <Association Name="tb_KhachHang_tb_HoaDonBan" Member="tb_KhachHang" ThisKey="MaKH" OtherKey="MaKH" Type="tb_KhachHang" IsForeignKey="true" />
       <Association Name="tb_NhanVien_tb_HoaDonBan" Member="tb_NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="tb_NhanVien" IsForeignKey="true" />
     </Type>
@@ -73,7 +74,6 @@
   </Table>
   <Table Name="dbo.tb_Identity" Member="tb_Identities">
     <Type Name="tb_Identity">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="NhanVien" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SanPham" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="HoaDonBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -99,7 +99,7 @@
       <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
       <Column Name="DienThoai" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Username" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="DiaChi" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
       <Column Name="DaXoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="tb_NhanVien_tb_HoaDonBan" Member="tb_HoaDonBans" ThisKey="MaNV" OtherKey="MaNV" Type="tb_HoaDonBan" />

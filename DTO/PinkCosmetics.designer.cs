@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL
+namespace DTO
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -23,7 +23,7 @@ namespace DAL
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="dbPinkCosmetics")]
-	public partial class DataClassesDataContext : System.Data.Linq.DataContext
+	public partial class PinkCosmeticsDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -51,9 +51,6 @@ namespace DAL
     partial void Inserttb_HoaDonNhap(tb_HoaDonNhap instance);
     partial void Updatetb_HoaDonNhap(tb_HoaDonNhap instance);
     partial void Deletetb_HoaDonNhap(tb_HoaDonNhap instance);
-    partial void Inserttb_Identity(tb_Identity instance);
-    partial void Updatetb_Identity(tb_Identity instance);
-    partial void Deletetb_Identity(tb_Identity instance);
     partial void Inserttb_KhachHang(tb_KhachHang instance);
     partial void Updatetb_KhachHang(tb_KhachHang instance);
     partial void Deletetb_KhachHang(tb_KhachHang instance);
@@ -71,31 +68,31 @@ namespace DAL
     partial void Deletetb_TaiKhoan(tb_TaiKhoan instance);
     #endregion
 		
-		public DataClassesDataContext() : 
-				base(global::DAL.Properties.Settings.Default.dbPinkCosmeticsConnectionString, mappingSource)
+		public PinkCosmeticsDataContext() : 
+				base(global::DTO.Properties.Settings.Default.dbPinkCosmeticsConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClassesDataContext(string connection) : 
+		public PinkCosmeticsDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClassesDataContext(System.Data.IDbConnection connection) : 
+		public PinkCosmeticsDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClassesDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public PinkCosmeticsDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClassesDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public PinkCosmeticsDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -218,6 +215,8 @@ namespace DAL
 		
 		private System.Nullable<bool> _DaXoa;
 		
+		private EntitySet<tb_ChiTietHDBan> _tb_ChiTietHDBans;
+		
 		private EntitySet<tb_GiaBan> _tb_GiaBans;
 		
     #region Extensibility Method Definitions
@@ -234,6 +233,7 @@ namespace DAL
 		
 		public tb_BangGia()
 		{
+			this._tb_ChiTietHDBans = new EntitySet<tb_ChiTietHDBan>(new Action<tb_ChiTietHDBan>(this.attach_tb_ChiTietHDBans), new Action<tb_ChiTietHDBan>(this.detach_tb_ChiTietHDBans));
 			this._tb_GiaBans = new EntitySet<tb_GiaBan>(new Action<tb_GiaBan>(this.attach_tb_GiaBans), new Action<tb_GiaBan>(this.detach_tb_GiaBans));
 			OnCreated();
 		}
@@ -298,6 +298,19 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tb_BangGia_tb_ChiTietHDBan", Storage="_tb_ChiTietHDBans", ThisKey="MaBangGia", OtherKey="MaBangGia")]
+		public EntitySet<tb_ChiTietHDBan> tb_ChiTietHDBans
+		{
+			get
+			{
+				return this._tb_ChiTietHDBans;
+			}
+			set
+			{
+				this._tb_ChiTietHDBans.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tb_BangGia_tb_GiaBan", Storage="_tb_GiaBans", ThisKey="MaBangGia", OtherKey="MaBangGia")]
 		public EntitySet<tb_GiaBan> tb_GiaBans
 		{
@@ -329,6 +342,18 @@ namespace DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_tb_ChiTietHDBans(tb_ChiTietHDBan entity)
+		{
+			this.SendPropertyChanging();
+			entity.tb_BangGia = this;
+		}
+		
+		private void detach_tb_ChiTietHDBans(tb_ChiTietHDBan entity)
+		{
+			this.SendPropertyChanging();
+			entity.tb_BangGia = null;
 		}
 		
 		private void attach_tb_GiaBans(tb_GiaBan entity)
@@ -492,13 +517,15 @@ namespace DAL
 		
 		private string _MaSanPham;
 		
+		private int _MaBangGia;
+		
 		private int _SoLuong;
 		
 		private System.Nullable<decimal> _DonGia;
 		
 		private System.Nullable<decimal> _ThanhTien;
 		
-		private EntityRef<tb_HoaDonBan> _tb_HoaDonBan;
+		private EntityRef<tb_BangGia> _tb_BangGia;
 		
 		private EntityRef<tb_SanPham> _tb_SanPham;
 		
@@ -510,6 +537,8 @@ namespace DAL
     partial void OnMaHDBanChanged();
     partial void OnMaSanPhamChanging(string value);
     partial void OnMaSanPhamChanged();
+    partial void OnMaBangGiaChanging(int value);
+    partial void OnMaBangGiaChanged();
     partial void OnSoLuongChanging(int value);
     partial void OnSoLuongChanged();
     partial void OnDonGiaChanging(System.Nullable<decimal> value);
@@ -520,7 +549,7 @@ namespace DAL
 		
 		public tb_ChiTietHDBan()
 		{
-			this._tb_HoaDonBan = default(EntityRef<tb_HoaDonBan>);
+			this._tb_BangGia = default(EntityRef<tb_BangGia>);
 			this._tb_SanPham = default(EntityRef<tb_SanPham>);
 			OnCreated();
 		}
@@ -536,10 +565,6 @@ namespace DAL
 			{
 				if ((this._MaHDBan != value))
 				{
-					if (this._tb_HoaDonBan.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMaHDBanChanging(value);
 					this.SendPropertyChanging();
 					this._MaHDBan = value;
@@ -569,6 +594,30 @@ namespace DAL
 					this._MaSanPham = value;
 					this.SendPropertyChanged("MaSanPham");
 					this.OnMaSanPhamChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaBangGia", DbType="Int NOT NULL")]
+		public int MaBangGia
+		{
+			get
+			{
+				return this._MaBangGia;
+			}
+			set
+			{
+				if ((this._MaBangGia != value))
+				{
+					if (this._tb_BangGia.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaBangGiaChanging(value);
+					this.SendPropertyChanging();
+					this._MaBangGia = value;
+					this.SendPropertyChanged("MaBangGia");
+					this.OnMaBangGiaChanged();
 				}
 			}
 		}
@@ -633,36 +682,36 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tb_HoaDonBan_tb_ChiTietHDBan", Storage="_tb_HoaDonBan", ThisKey="MaHDBan", OtherKey="MaHDBan", IsForeignKey=true)]
-		public tb_HoaDonBan tb_HoaDonBan
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tb_BangGia_tb_ChiTietHDBan", Storage="_tb_BangGia", ThisKey="MaBangGia", OtherKey="MaBangGia", IsForeignKey=true)]
+		public tb_BangGia tb_BangGia
 		{
 			get
 			{
-				return this._tb_HoaDonBan.Entity;
+				return this._tb_BangGia.Entity;
 			}
 			set
 			{
-				tb_HoaDonBan previousValue = this._tb_HoaDonBan.Entity;
+				tb_BangGia previousValue = this._tb_BangGia.Entity;
 				if (((previousValue != value) 
-							|| (this._tb_HoaDonBan.HasLoadedOrAssignedValue == false)))
+							|| (this._tb_BangGia.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._tb_HoaDonBan.Entity = null;
+						this._tb_BangGia.Entity = null;
 						previousValue.tb_ChiTietHDBans.Remove(this);
 					}
-					this._tb_HoaDonBan.Entity = value;
+					this._tb_BangGia.Entity = value;
 					if ((value != null))
 					{
 						value.tb_ChiTietHDBans.Add(this);
-						this._MaHDBan = value.MaHDBan;
+						this._MaBangGia = value.MaBangGia;
 					}
 					else
 					{
-						this._MaHDBan = default(string);
+						this._MaBangGia = default(int);
 					}
-					this.SendPropertyChanged("tb_HoaDonBan");
+					this.SendPropertyChanged("tb_BangGia");
 				}
 			}
 		}
@@ -1176,8 +1225,6 @@ namespace DAL
 		
 		private System.Nullable<bool> _TrangThai;
 		
-		private EntitySet<tb_ChiTietHDBan> _tb_ChiTietHDBans;
-		
 		private EntityRef<tb_KhachHang> _tb_KhachHang;
 		
 		private EntityRef<tb_NhanVien> _tb_NhanVien;
@@ -1206,7 +1253,6 @@ namespace DAL
 		
 		public tb_HoaDonBan()
 		{
-			this._tb_ChiTietHDBans = new EntitySet<tb_ChiTietHDBan>(new Action<tb_ChiTietHDBan>(this.attach_tb_ChiTietHDBans), new Action<tb_ChiTietHDBan>(this.detach_tb_ChiTietHDBans));
 			this._tb_KhachHang = default(EntityRef<tb_KhachHang>);
 			this._tb_NhanVien = default(EntityRef<tb_NhanVien>);
 			OnCreated();
@@ -1380,19 +1426,6 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tb_HoaDonBan_tb_ChiTietHDBan", Storage="_tb_ChiTietHDBans", ThisKey="MaHDBan", OtherKey="MaHDBan")]
-		public EntitySet<tb_ChiTietHDBan> tb_ChiTietHDBans
-		{
-			get
-			{
-				return this._tb_ChiTietHDBans;
-			}
-			set
-			{
-				this._tb_ChiTietHDBans.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tb_KhachHang_tb_HoaDonBan", Storage="_tb_KhachHang", ThisKey="MaKH", OtherKey="MaKH", IsForeignKey=true)]
 		public tb_KhachHang tb_KhachHang
 		{
@@ -1479,18 +1512,6 @@ namespace DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_tb_ChiTietHDBans(tb_ChiTietHDBan entity)
-		{
-			this.SendPropertyChanging();
-			entity.tb_HoaDonBan = this;
-		}
-		
-		private void detach_tb_ChiTietHDBans(tb_ChiTietHDBan entity)
-		{
-			this.SendPropertyChanging();
-			entity.tb_HoaDonBan = null;
 		}
 	}
 	
@@ -1674,12 +1695,8 @@ namespace DAL
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tb_Identity")]
-	public partial class tb_Identity : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class tb_Identity
 	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
 		
 		private System.Nullable<int> _NhanVien;
 		
@@ -1689,45 +1706,8 @@ namespace DAL
 		
 		private System.Nullable<int> _HoaDonNhap;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnNhanVienChanging(System.Nullable<int> value);
-    partial void OnNhanVienChanged();
-    partial void OnSanPhamChanging(System.Nullable<int> value);
-    partial void OnSanPhamChanged();
-    partial void OnHoaDonBanChanging(System.Nullable<int> value);
-    partial void OnHoaDonBanChanged();
-    partial void OnHoaDonNhapChanging(System.Nullable<int> value);
-    partial void OnHoaDonNhapChanged();
-    #endregion
-		
 		public tb_Identity()
 		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NhanVien", DbType="Int")]
@@ -1741,11 +1721,7 @@ namespace DAL
 			{
 				if ((this._NhanVien != value))
 				{
-					this.OnNhanVienChanging(value);
-					this.SendPropertyChanging();
 					this._NhanVien = value;
-					this.SendPropertyChanged("NhanVien");
-					this.OnNhanVienChanged();
 				}
 			}
 		}
@@ -1761,11 +1737,7 @@ namespace DAL
 			{
 				if ((this._SanPham != value))
 				{
-					this.OnSanPhamChanging(value);
-					this.SendPropertyChanging();
 					this._SanPham = value;
-					this.SendPropertyChanged("SanPham");
-					this.OnSanPhamChanged();
 				}
 			}
 		}
@@ -1781,11 +1753,7 @@ namespace DAL
 			{
 				if ((this._HoaDonBan != value))
 				{
-					this.OnHoaDonBanChanging(value);
-					this.SendPropertyChanging();
 					this._HoaDonBan = value;
-					this.SendPropertyChanged("HoaDonBan");
-					this.OnHoaDonBanChanged();
 				}
 			}
 		}
@@ -1801,32 +1769,8 @@ namespace DAL
 			{
 				if ((this._HoaDonNhap != value))
 				{
-					this.OnHoaDonNhapChanging(value);
-					this.SendPropertyChanging();
 					this._HoaDonNhap = value;
-					this.SendPropertyChanged("HoaDonNhap");
-					this.OnHoaDonNhapChanged();
 				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -2223,7 +2167,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(30)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
 		public string Username
 		{
 			get

@@ -6,17 +6,17 @@ namespace GUI.UserComponents
 {
     public partial class ItemCartControl : UserControl
     {
-        private SanPham_DTO _product;
-        public SanPham_DTO Product { get => _product; set => _product = value; }
+        private tb_SanPham _product;
+        public tb_SanPham Product { get => _product; set => _product = value; }
 
-        public ItemCartControl(SanPham_DTO product)
+        public ItemCartControl(tb_SanPham product)
         {
             _product = product;
 
             InitializeComponent();
-            lblItemName.Text = Product.TenSanPham;
+            lblItemName.Text = Product.TenSP;
             lblUnitPrice.Text = string.Format("{0:#,##0}", Product.GiaVon);
-            lblTotalPrice.Text = string.Format("{0:#,##0}", Product.GiaVon * (double)spinQuantity.Value);
+            lblTotalPrice.Text = string.Format("{0:#,##0}", (double)Product.GiaVon * (double)spinQuantity.Value);
         }
 
         public void BtnDecrease_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace GUI.UserComponents
 
         private void SpinQuantity_EditValueChanged(object sender, EventArgs e)
         {
-            lblTotalPrice.Text = string.Format("{0:#,##0}", Product.GiaVon * (double)spinQuantity.Value);
+            lblTotalPrice.Text = string.Format("{0:#,##0}", (double)Product.GiaVon * (double)spinQuantity.Value);
         }
 
         private void BtnRemove_Click(object sender, EventArgs e)
