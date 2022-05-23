@@ -8,17 +8,17 @@ namespace GUI.UserComponents
 {
     public partial class ItemProductControl : UserControl
     {
-        private SanPham_DTO _product;
-        public SanPham_DTO Product { get => _product; set => _product = value; }
+        private tb_SanPham _product;
+        public tb_SanPham Product { get => _product; set => _product = value; }
 
-        public ItemProductControl(SanPham_DTO product, Panel parent)
+        public ItemProductControl(tb_SanPham product, Panel parent)
         {
             InitializeComponent();
             _product = product;
             Parent = parent;
             // Handle text-overflow
             //lblName.Text = product.TenSanPham.Length > 35 ? string.Concat(product.TenSanPham.Substring(0, 35), "...") : product.TenSanPham;
-            lblName.Text = product.TenSanPham;
+            lblName.Text = product.TenSP;
             lblPrice.Text = string.Format("{0:#,##0}", product.GiaVon);
             // If the product image isn't found, set default image
             if (product.UrlHinh != null)
@@ -58,7 +58,7 @@ namespace GUI.UserComponents
         private void ChildControl_MouseHover(object sender, EventArgs e)
         {
             BorderStyle = BorderStyle.FixedSingle;
-            toolTipController1.ShowHint(Product.TenSanPham + " - " + lblPrice.Text);
+            toolTipController1.ShowHint(Product.TenSP + " - " + lblPrice.Text);
         }
     }
 }
