@@ -1,174 +1,214 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 16.25" name="PinkCosmetics">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.5, 19.625" name="PinkCosmetics">
   <DataContextMoniker Name="/PinkCosmeticsDataContext" />
   <nestedChildShapes>
-    <classShape Id="4e046655-25c6-4388-9a75-07f90117791b" absoluteBounds="3.5, 1, 2, 1.3862939453125">
+    <classShape Id="a0615475-e786-49ad-ad53-5b857316186b" absoluteBounds="3.5, 2, 2, 1.3862939453125003">
       <DataClassMoniker Name="/PinkCosmeticsDataContext/tb_BangGia" />
       <nestedChildShapes>
-        <elementListCompartment Id="ef7412e8-20ed-4b43-a11e-dc531ec7a45f" absoluteBounds="3.515, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4a323a18-7d15-4023-84d8-1938b2c95ad6" absoluteBounds="3.515, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5ec00092-3cda-48c1-8598-8402d5fb1336" absoluteBounds="0.75, 4, 2, 1.3862939453125005">
+    <classShape Id="4c5dcfaa-ca21-4569-8eab-040cd00b2f19" absoluteBounds="0.75, 5, 2, 1.3862939453125005">
       <DataClassMoniker Name="/PinkCosmeticsDataContext/tb_ThuongHieu" />
       <nestedChildShapes>
-        <elementListCompartment Id="6fcb32b7-ffb6-4f55-ab92-1448803f063d" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9bb013ed-2cba-4371-bc93-90e5ba2f4370" absoluteBounds="0.765, 5.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b7c1fbf0-e970-4acf-98a7-a17eb8eb6c6c" absoluteBounds="6.25, 6.625, 2, 1.9631982421875005">
+    <classShape Id="9887540c-0c61-44e9-a771-e6565c58e3fb" absoluteBounds="9.25, 4.625, 2, 1.9631982421875005">
       <DataClassMoniker Name="/PinkCosmeticsDataContext/tb_ChiTietHDBan" />
       <nestedChildShapes>
-        <elementListCompartment Id="4dcdb526-6fb4-45e2-8c72-c5a5b563b01f" absoluteBounds="6.265, 7.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a8539525-f941-4244-a41e-b4cad4b92bf4" absoluteBounds="9.265, 5.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="389d0d6d-2635-4f26-9456-f645fcaca5f4" absoluteBounds="6.25, 0.75, 2, 1.7708968098958326">
+    <classShape Id="327595c4-8c30-4209-a3dc-9ea90a850a57" absoluteBounds="6.25, 7.75, 2, 1.7708968098958335">
       <DataClassMoniker Name="/PinkCosmeticsDataContext/tb_ChiTietHDNhap" />
       <nestedChildShapes>
-        <elementListCompartment Id="a473acdf-3fd0-44d2-a404-4a60bb108a69" absoluteBounds="6.265, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="81099112-bdc6-4b7b-b543-cb216cc66f2f" absoluteBounds="6.265, 8.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="416e60bb-b8b6-40bf-a5f8-57bbab5b4cb9" absoluteBounds="6.25, 4, 2, 1.3862939453125005">
+    <classShape Id="f813017e-2555-4829-87b9-8b4eab4cebcd" absoluteBounds="6.25, 5, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/PinkCosmeticsDataContext/tb_ChiTietPhieuDat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="680af246-84a8-454e-a463-1cf83280b6cf" absoluteBounds="6.265, 5.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6d2e9f6b-8028-4557-a85e-e274f95f023d" absoluteBounds="6.25, 2, 2, 1.3862939453125003">
       <DataClassMoniker Name="/PinkCosmeticsDataContext/tb_GiaBan" />
       <nestedChildShapes>
-        <elementListCompartment Id="e8fc578c-c690-4eb0-964c-192d428b2cdf" absoluteBounds="6.265, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e0062aab-954a-44a4-a490-5f79a7ee6f85" absoluteBounds="6.265, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b441e74a-643e-4275-9ec2-95b30d5b634c" absoluteBounds="4.5, 10.75, 2, 2.3478011067708344">
+    <classShape Id="15854194-44f5-4f90-ba6c-ce6b7b89b419" absoluteBounds="6.5, 12.5, 2, 2.3478011067708344">
       <DataClassMoniker Name="/PinkCosmeticsDataContext/tb_HoaDonBan" />
       <nestedChildShapes>
-        <elementListCompartment Id="fdf65eea-bbc6-4c1e-9a8c-8a3600970276" absoluteBounds="4.515, 11.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7beb07c3-7729-4d1c-9fee-789db30907b5" absoluteBounds="6.515, 12.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="22d1f253-14eb-4613-a906-a3291a6d990d" absoluteBounds="3.5, 8.25, 2, 1.3862939453124987">
+    <classShape Id="f2aa511b-2647-4b39-a51d-f46b0ef09f35" absoluteBounds="3.5, 18, 2, 1.3862939453125023">
       <DataClassMoniker Name="/PinkCosmeticsDataContext/tb_HoaDonNhap" />
       <nestedChildShapes>
-        <elementListCompartment Id="a8c8b208-b414-4aae-b21b-fafe3ba594c2" absoluteBounds="3.515, 8.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="552c8c52-943c-48d5-88dc-db63a92fbd6e" absoluteBounds="3.515, 18.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="0c3b7bd6-ab7a-4117-ac3d-6eee8c863b5d" absoluteBounds="8.75, 0.875, 2, 1.5785953776041663">
+    <classShape Id="a2c8cca4-a7a6-4846-8f94-9e058da4d2ca" absoluteBounds="8.75, 0.75, 2, 1.7708968098958329">
       <DataClassMoniker Name="/PinkCosmeticsDataContext/tb_Identity" />
       <nestedChildShapes>
-        <elementListCompartment Id="a52c3c49-28c3-4e6b-9b5e-6997adbf58b1" absoluteBounds="8.765, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c652d15e-3973-4d1c-bf29-e1d148959089" absoluteBounds="8.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1097aea1-28e0-42a2-a488-c817a956de5e" absoluteBounds="1.75, 13.875, 2, 2.1554996744791666">
+    <classShape Id="10145f75-ce80-4cb3-a9e0-4c089c001c53" absoluteBounds="3.75, 10.875, 2, 2.3478011067708344">
       <DataClassMoniker Name="/PinkCosmeticsDataContext/tb_KhachHang" />
       <nestedChildShapes>
-        <elementListCompartment Id="d3d65d4c-c6c6-4932-b6f1-3ece959fb763" absoluteBounds="1.7650000000000001, 14.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ad4391cb-6d68-4cbb-813e-1763dbbfbe4b" absoluteBounds="3.765, 11.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4e4d898a-9676-4d8c-ba69-bdbc83a01212" absoluteBounds="0.75, 7.75, 2, 2.3478011067708344">
+    <classShape Id="5d6ec92f-d217-49c1-8c32-0c8a9e02598f" absoluteBounds="3.75, 14, 2, 2.3478011067708344">
       <DataClassMoniker Name="/PinkCosmeticsDataContext/tb_NhanVien" />
       <nestedChildShapes>
-        <elementListCompartment Id="c337d419-70cf-4896-8534-15f657d0c9ff" absoluteBounds="0.765, 8.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c866a27d-6725-40d0-a7a0-80ec55e73e85" absoluteBounds="3.765, 14.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e0d3db41-8b05-40ce-b728-8c4a73892a8a" absoluteBounds="0.75, 0.875, 2, 1.5785953776041663">
+    <classShape Id="f137d608-0d7a-4699-923e-c010f64550f7" absoluteBounds="0.75, 1.875, 2, 1.5785953776041666">
       <DataClassMoniker Name="/PinkCosmeticsDataContext/tb_NhomSanPham" />
       <nestedChildShapes>
-        <elementListCompartment Id="20d249eb-435d-422d-9949-6f8984dbda12" absoluteBounds="0.765, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5ee941f1-64a4-4d7c-87b2-8a3fbf446f34" absoluteBounds="0.765, 2.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9c645639-0e62-48f6-9c20-385f63aa875f" absoluteBounds="3.5, 3.125, 2, 2.9247054036458326">
+    <classShape Id="5488aeef-d034-4bd2-8834-6d16790e39f1" absoluteBounds="3.5, 8, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/PinkCosmeticsDataContext/tb_PhieuDatHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ebcf4a0e-7ce9-4581-9432-0cbb29211fc6" absoluteBounds="3.515, 8.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="634ff609-8670-4307-89a4-05cf78d778eb" absoluteBounds="3.5, 4.125, 2, 2.9247054036458326">
       <DataClassMoniker Name="/PinkCosmeticsDataContext/tb_SanPham" />
       <nestedChildShapes>
-        <elementListCompartment Id="29f7a561-71a9-41af-adab-96a191fac82c" absoluteBounds="3.515, 3.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0e9e0d19-3b02-447d-844d-ec3bd0f495a8" absoluteBounds="3.515, 4.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="80d9088b-f61c-41a4-9be6-7d74ee359d15" absoluteBounds="1.5, 11.125, 2, 1.5785953776041666">
+    <classShape Id="5ddf530f-c5ff-4a0d-a03e-dad074a2d0c7" absoluteBounds="1, 14.375, 2, 1.5785953776041666">
       <DataClassMoniker Name="/PinkCosmeticsDataContext/tb_TaiKhoan" />
       <nestedChildShapes>
-        <elementListCompartment Id="1ee8adfc-d871-4cc8-8884-7428404f57bc" absoluteBounds="1.5150000000000001, 11.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="37f97f12-e6d1-41d3-b8b4-afe3cd8a900a" absoluteBounds="1.0150000000000001, 14.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.47760602088341 : 2.3862939453125); (5.875 : 2.78368792442909); (5.875 : 7.60659912109375); (6.25 : 7.60659912109375)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 3.3862939453125); (5.875 : 3.7612939453125); (10.25 : 3.7612939453125); (10.25 : 4.625)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/PinkCosmeticsDataContext/tb_BangGia/tb_BangGia_tb_ChiTietHDBan" />
       <nodes>
-        <classShapeMoniker Id="4e046655-25c6-4388-9a75-07f90117791b" />
-        <classShapeMoniker Id="b7c1fbf0-e970-4acf-98a7-a17eb8eb6c6c" />
+        <classShapeMoniker Id="a0615475-e786-49ad-ad53-5b857316186b" />
+        <classShapeMoniker Id="9887540c-0c61-44e9-a771-e6565c58e3fb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 2.33190756745793); (5.87857443490112 : 2.71048200235905 : JumpStart); (5.99642556509888 : 2.82833313255681 : JumpEnd); (6.03125 : 2.86315756745793); (6.03125 : 4.69314697265625); (6.25 : 4.69314697265625)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 2.66189447265625); (6.25 : 2.66189447265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/PinkCosmeticsDataContext/tb_BangGia/tb_BangGia_tb_GiaBan" />
       <nodes>
-        <classShapeMoniker Id="4e046655-25c6-4388-9a75-07f90117791b" />
-        <classShapeMoniker Id="416e60bb-b8b6-40bf-a5f8-57bbab5b4cb9" />
+        <classShapeMoniker Id="a0615475-e786-49ad-ad53-5b857316186b" />
+        <classShapeMoniker Id="6d2e9f6b-8028-4557-a85e-e274f95f023d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 8.3118490375601); (5.9375 : 7.8743490375601); (5.9375 : 1.63544840494792); (6.25 : 1.63544840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.40625 : 12.5); (8.40625 : 4.78125); (9.25 : 4.78125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PinkCosmeticsDataContext/tb_HoaDonBan/tb_HoaDonBan_tb_ChiTietHDBan" />
+      <nodes>
+        <classShapeMoniker Id="15854194-44f5-4f90-ba6c-ce6b7b89b419" />
+        <classShapeMoniker Id="9887540c-0c61-44e9-a771-e6565c58e3fb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 18.6931469726563); (6.34375 : 18.6931469726563); (6.34375 : 9.52089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/PinkCosmeticsDataContext/tb_HoaDonNhap/tb_HoaDonNhap_tb_ChiTietHDNhap" />
       <nodes>
-        <classShapeMoniker Id="22d1f253-14eb-4613-a906-a3291a6d990d" />
-        <classShapeMoniker Id="389d0d6d-2635-4f26-9456-f645fcaca5f4" />
+        <classShapeMoniker Id="f2aa511b-2647-4b39-a51d-f46b0ef09f35" />
+        <classShapeMoniker Id="327595c4-8c30-4209-a3dc-9ea90a850a57" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.65625 : 13.875); (3.65625 : 12.9319482421875); (4.5 : 12.9319482421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 12.8614005533854); (6.26041666666667 : 12.8614005533854 : JumpStart); (6.42708333333333 : 12.8614005533854 : JumpEnd); (6.5 : 12.8614005533854)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/PinkCosmeticsDataContext/tb_KhachHang/tb_KhachHang_tb_HoaDonBan" />
       <nodes>
-        <classShapeMoniker Id="1097aea1-28e0-42a2-a488-c817a956de5e" />
-        <classShapeMoniker Id="b441e74a-643e-4275-9ec2-95b30d5b634c" />
+        <classShapeMoniker Id="10145f75-ce80-4cb3-a9e0-4c089c001c53" />
+        <classShapeMoniker Id="15854194-44f5-4f90-ba6c-ce6b7b89b419" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.09375 : 10.0978011067708); (1.09375 : 10.90625); (2.04166666666667 : 10.90625 : JumpStart); (2.20833333333333 : 10.90625 : JumpEnd); (4.5 : 10.90625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 14.4239005533854); (6.26041666666667 : 14.4239005533854 : JumpStart); (6.42708333333333 : 14.4239005533854 : JumpEnd); (6.5 : 14.4239005533854)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/PinkCosmeticsDataContext/tb_NhanVien/tb_NhanVien_tb_HoaDonBan" />
       <nodes>
-        <classShapeMoniker Id="4e4d898a-9676-4d8c-ba69-bdbc83a01212" />
-        <classShapeMoniker Id="b441e74a-643e-4275-9ec2-95b30d5b634c" />
+        <classShapeMoniker Id="5d6ec92f-d217-49c1-8c32-0c8a9e02598f" />
+        <classShapeMoniker Id="15854194-44f5-4f90-ba6c-ce6b7b89b419" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 8.94314697265625); (3.5 : 8.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.625 : 16.3478011067708); (4.625 : 18)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/PinkCosmeticsDataContext/tb_NhanVien/tb_NhanVien_tb_HoaDonNhap" />
       <nodes>
-        <classShapeMoniker Id="4e4d898a-9676-4d8c-ba69-bdbc83a01212" />
-        <classShapeMoniker Id="22d1f253-14eb-4613-a906-a3291a6d990d" />
+        <classShapeMoniker Id="5d6ec92f-d217-49c1-8c32-0c8a9e02598f" />
+        <classShapeMoniker Id="f2aa511b-2647-4b39-a51d-f46b0ef09f35" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.45242346379207 : 2.45359537760417); (1.45242346379207 : 2.70359537760417); (2.06174684745593 : 2.70359537760417); (2.06174684745593 : 2.45359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(1.45242346379207 : 3.45359537760417); (1.45242346379207 : 3.70359537760417); (2.06174684745593 : 3.70359537760417); (2.06174684745593 : 3.45359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/PinkCosmeticsDataContext/tb_NhomSanPham/tb_NhomSanPham_tb_NhomSanPham" />
       <nodes>
-        <classShapeMoniker Id="e0d3db41-8b05-40ce-b728-8c4a73892a8a" />
-        <classShapeMoniker Id="e0d3db41-8b05-40ce-b728-8c4a73892a8a" />
+        <classShapeMoniker Id="f137d608-0d7a-4699-923e-c010f64550f7" />
+        <classShapeMoniker Id="f137d608-0d7a-4699-923e-c010f64550f7" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 6.0189351728766); (5.65625 : 6.42470540364583); (5.65625 : 6.03125); (5.81607443490112 : 6.19107443490112 : JumpStart); (5.99642556509888 : 6.37142556509888 : JumpEnd); (6.25 : 6.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 8.00106537995793); (5.875 : 7.62606537995793); (5.875 : 5.69314697265625); (6.25 : 5.69314697265625)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PinkCosmeticsDataContext/tb_PhieuDatHang/tb_PhieuDatHang_tb_ChiTietPhieuDat" />
+      <nodes>
+        <classShapeMoniker Id="5488aeef-d034-4bd2-8834-6d16790e39f1" />
+        <classShapeMoniker Id="f813017e-2555-4829-87b9-8b4eab4cebcd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.75153746153846 : 14); (3.5 : 13.7484625384615); (3.5 : 9.3862939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PinkCosmeticsDataContext/tb_NhanVien/tb_NhanVien_tb_PhieuDatHang" />
+      <nodes>
+        <classShapeMoniker Id="5d6ec92f-d217-49c1-8c32-0c8a9e02598f" />
+        <classShapeMoniker Id="5488aeef-d034-4bd2-8834-6d16790e39f1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.51849609375); (5.79166666666667 : 6.51849609375 : JumpStart); (5.95833333333333 : 6.51849609375 : JumpEnd); (8.32291666666667 : 6.51849609375 : JumpStart); (8.48958333333333 : 6.51849609375 : JumpEnd); (9.25 : 6.51849609375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/PinkCosmeticsDataContext/tb_SanPham/tb_SanPham_tb_ChiTietHDBan" />
       <nodes>
-        <classShapeMoniker Id="9c645639-0e62-48f6-9c20-385f63aa875f" />
-        <classShapeMoniker Id="b7c1fbf0-e970-4acf-98a7-a17eb8eb6c6c" />
+        <classShapeMoniker Id="634ff609-8670-4307-89a4-05cf78d778eb" />
+        <classShapeMoniker Id="9887540c-0c61-44e9-a771-e6565c58e3fb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 3.15576823076923); (5.65625 : 2.75); (5.65625 : 3.11464680989583); (5.81607443490112 : 2.95482237499471 : JumpStart); (5.99642556509888 : 2.77447124479695 : JumpEnd); (6.25 : 2.52089680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 6.98816594210737); (5.81607443490112 : 7.30424037700849 : JumpStart); (5.93392556509888 : 7.42209150720625 : JumpEnd); (6.0625 : 7.55066594210737); (6.0625 : 8.63544840494792); (6.25 : 8.63544840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/PinkCosmeticsDataContext/tb_SanPham/tb_SanPham_tb_ChiTietHDNhap" />
       <nodes>
-        <classShapeMoniker Id="9c645639-0e62-48f6-9c20-385f63aa875f" />
-        <classShapeMoniker Id="389d0d6d-2635-4f26-9456-f645fcaca5f4" />
+        <classShapeMoniker Id="634ff609-8670-4307-89a4-05cf78d778eb" />
+        <classShapeMoniker Id="327595c4-8c30-4209-a3dc-9ea90a850a57" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.28407348632813); (5.79166666666667 : 4.28407348632812 : JumpStart); (6.11458333333333 : 4.28407348632813 : JumpEnd); (6.25 : 4.28407348632813)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 5.28407348632813); (6.25 : 5.28407348632813)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PinkCosmeticsDataContext/tb_SanPham/tb_SanPham_tb_ChiTietPhieuDat" />
+      <nodes>
+        <classShapeMoniker Id="634ff609-8670-4307-89a4-05cf78d778eb" />
+        <classShapeMoniker Id="f813017e-2555-4829-87b9-8b4eab4cebcd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.125); (5.875 : 3.75); (5.875 : 3.05534620898438); (6.25 : 3.05534620898438)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/PinkCosmeticsDataContext/tb_SanPham/tb_SanPham_tb_GiaBan" />
       <nodes>
-        <classShapeMoniker Id="9c645639-0e62-48f6-9c20-385f63aa875f" />
-        <classShapeMoniker Id="416e60bb-b8b6-40bf-a5f8-57bbab5b4cb9" />
+        <classShapeMoniker Id="634ff609-8670-4307-89a4-05cf78d778eb" />
+        <classShapeMoniker Id="6d2e9f6b-8028-4557-a85e-e274f95f023d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.45359537760417); (3.125 : 2.82859537760417); (3.125 : 4.58735270182292); (3.5 : 4.58735270182292)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 3.45359537760417); (3.125 : 3.82859537760417); (3.125 : 5.58735270182292); (3.5 : 5.58735270182292)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/PinkCosmeticsDataContext/tb_NhomSanPham/tb_NhomSanPham_tb_SanPham" />
       <nodes>
-        <classShapeMoniker Id="e0d3db41-8b05-40ce-b728-8c4a73892a8a" />
-        <classShapeMoniker Id="9c645639-0e62-48f6-9c20-385f63aa875f" />
+        <classShapeMoniker Id="f137d608-0d7a-4699-923e-c010f64550f7" />
+        <classShapeMoniker Id="634ff609-8670-4307-89a4-05cf78d778eb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.04932332356771); (3.5 : 5.04932332356771)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 6.04932332356771); (3.5 : 6.04932332356771)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/PinkCosmeticsDataContext/tb_ThuongHieu/tb_ThuongHieu_tb_SanPham" />
       <nodes>
-        <classShapeMoniker Id="5ec00092-3cda-48c1-8598-8402d5fb1336" />
-        <classShapeMoniker Id="9c645639-0e62-48f6-9c20-385f63aa875f" />
+        <classShapeMoniker Id="4c5dcfaa-ca21-4569-8eab-040cd00b2f19" />
+        <classShapeMoniker Id="634ff609-8670-4307-89a4-05cf78d778eb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.125 : 11.125); (2.125 : 10.0978011067708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3 : 15.1642976888021); (3.75 : 15.1642976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/PinkCosmeticsDataContext/tb_TaiKhoan/tb_TaiKhoan_tb_NhanVien" />
       <nodes>
-        <classShapeMoniker Id="80d9088b-f61c-41a4-9be6-7d74ee359d15" />
-        <classShapeMoniker Id="4e4d898a-9676-4d8c-ba69-bdbc83a01212" />
+        <classShapeMoniker Id="5ddf530f-c5ff-4a0d-a03e-dad074a2d0c7" />
+        <classShapeMoniker Id="5d6ec92f-d217-49c1-8c32-0c8a9e02598f" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
