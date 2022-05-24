@@ -20,11 +20,11 @@ namespace DAL
         /// <summary>
         /// Get a product by ID
         /// </summary>
-        /// <param name="maSanPham">Product ID</param>
+        /// <param name="id">Product ID</param>
         /// <returns></returns>
-        public tb_SanPham GetProduct(string maSanPham)
+        public tb_SanPham GetProduct(string id)
         {
-            return dataContext.tb_SanPhams.FirstOrDefault(p => p.MaSanPham.Equals(maSanPham));
+            return dataContext.tb_SanPhams.FirstOrDefault(p => p.MaSanPham.Equals(id));
         }
     }
 }

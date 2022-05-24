@@ -44,10 +44,20 @@ namespace GUI.UserComponents
 
         private void SpinQuantity_EditValueChanged(object sender, EventArgs e)
         {
-            SalesInvoiceDetail.SoLuong = (int)spinQuantity.Value;
-            SalesInvoiceDetail.ThanhTien = (decimal)(SalesInvoiceDetail.SoLuong * SalesInvoiceDetail.DonGia);
-            lblTotalPrice.Text = Utilities.FormatWithThousandSeparator((double)SalesInvoiceDetail.ThanhTien, "VNĐ");
+            // Validate the quantity before modifying the quantity of sales invoice detail
+            if (SanPhamBLL.IsValidQuantityToGet(SalesInvoiceDetail.MaSanPham, (int)spinQuantity.Value))
+            {
+                SalesInvoiceDetail.SoLuong = (int)spinQuantity.Value;
+                SalesInvoiceDetail.ThanhTien = (decimal)(SalesInvoiceDetail.SoLuong * SalesInvoiceDetail.DonGia);
+                lblTotalPrice.Text = Utilities.FormatWithThousandSeparator((double)SalesInvoiceDetail.ThanhTien, "VNĐ");
+            }
+            else // If the quantity isn't valid, reassign the previous quantity
+            {
+                spinQuantity.Value = SalesInvoiceDetail.SoLuong;
+                MessageBox.Show("Số lượng tồn kho không đủ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
+            // Refresh total amount of cart
             _cart.UpdateTotalAmount();
         }
 

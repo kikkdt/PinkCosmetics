@@ -70,17 +70,26 @@ namespace GUI.UserComponents
             }
             else
             {
-                tb_ChiTietHDBan chiTietHDBan = new tb_ChiTietHDBan
+                // Validate the quantity before modifying the quantity of sales invoice detail
+                if (SanPhamBLL.IsValidQuantityToGet(Product.MaSanPham, 1))
                 {
-                    MaHDBan = _cart.InvoiceID,
-                    MaSanPham = Product.MaSanPham,
-                    MaBangGia = PriceTypeId,
-                    SoLuong = 1
-                };
-                decimal donGia = GiaBanBLL.GetPrice(PriceTypeId, Product.MaSanPham).GiaBan;
-                chiTietHDBan.DonGia = donGia;
-                chiTietHDBan.ThanhTien = donGia * 1;
-                AddItemCart(_cart, chiTietHDBan, _cart.PanelCart.Controls.Count + 1);
+                    tb_ChiTietHDBan chiTietHDBan = new tb_ChiTietHDBan
+                    {
+                        MaHDBan = _cart.InvoiceID,
+                        MaSanPham = Product.MaSanPham,
+                        MaBangGia = PriceTypeId,
+                        SoLuong = 1
+                    };
+                    decimal donGia = GiaBanBLL.GetPrice(PriceTypeId, Product.MaSanPham).GiaBan;
+                    chiTietHDBan.DonGia = donGia;
+                    chiTietHDBan.ThanhTien = donGia * 1;
+                    AddItemCart(_cart, chiTietHDBan, _cart.PanelCart.Controls.Count + 1);
+                }
+                else // If the quantity isn't valid, reassign the previous quantity
+                {
+                    MessageBox.Show("Số lượng tồn kho không đủ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
         }
 
