@@ -16,5 +16,14 @@ namespace DAL
         {
             return dataContext.tb_NhanViens.FirstOrDefault(e => e.MaNV.Equals(id));
         }
+        /// <summary>
+        /// Get a employee by account
+        /// </summary>
+        /// <param name="username">Username</param>
+        /// <returns></returns>
+        public tb_NhanVien GetEmployeeByAccount(string username)
+        {
+            return dataContext.tb_NhanViens.FirstOrDefault(e=>e.Username.Equals(username));
+        }
     }
 }

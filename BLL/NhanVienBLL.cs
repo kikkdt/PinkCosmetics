@@ -14,5 +14,14 @@ namespace BLL
         {
             return new NhanVienDAL().GetEmployee(id);
         }
+        /// <summary>
+        /// Get a employee by account
+        /// </summary>
+        /// <param name="username">Username</param>
+        /// <returns></returns>
+        public static tb_NhanVien GetEmployeeByAccount(string username)
+        {
+            return new NhanVienDAL().GetEmployeeByAccount(username);
+        }
     }
 }
