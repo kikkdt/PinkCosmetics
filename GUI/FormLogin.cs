@@ -14,7 +14,7 @@ namespace GUI
 {
     public partial class FormLogin : Form
     {
-        public static FormMain FormMain;
+        public FormMain FormMain;
         public FormLogin()
         {
             InitializeComponent();
@@ -35,9 +35,9 @@ namespace GUI
                     else // Login success
                     {
                         FormMain = new FormMain(account);
-                        FormMain.ShowDialog();
-                        FormMain.FormClosing += delegate { Close(); };
                         Hide();
+                        FormMain.FormClosing += delegate { Close(); };
+                        FormMain.ShowDialog();
                     }
                 }
             }

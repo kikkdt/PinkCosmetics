@@ -171,6 +171,7 @@ namespace GUI
                 if (formPayment.IsSuccess)
                 {
                     Close();
+                    Program.FormLogin.FormMain.btnPOS.PerformClick();
                 }
             };
             formPayment.ShowDialog();

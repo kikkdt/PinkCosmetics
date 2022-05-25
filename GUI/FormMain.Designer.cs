@@ -297,7 +297,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonSell;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonSellGroup;
-        private DevExpress.XtraBars.BarButtonItem btnPOS;
+        public DevExpress.XtraBars.BarButtonItem btnPOS;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonGoods;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonGoodsGroup;
         private DevExpress.XtraBars.BarButtonItem btnGoods;
