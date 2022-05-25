@@ -7,11 +7,14 @@ namespace GUI
 {
     public partial class FormMain : Form
     {
-        public static tb_NhanVien UserLogin = NhanVienBLL.GetEmployee("NV00001");
+        public static tb_NhanVien Employee { get; set; }
+        public static tb_TaiKhoan Account { get; set; }
 
-        public FormMain()
+        public FormMain(tb_TaiKhoan account)
         {
             InitializeComponent();
+            Account = account;
+            Employee = NhanVienBLL.GetEmployeeByAccount(account.Username);
         }
 
         private void BtnPOS_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -149,7 +149,7 @@ namespace GUI
             tb_HoaDonBan salesInvoice = new tb_HoaDonBan
             {
                 MaHDBan = _cart.InvoiceID,
-                MaNV = FormMain.UserLogin.MaNV,
+                MaNV = FormMain.Employee.MaNV,
                 MaKH = _cart.Customer?.MaKH,
                 NgayLap = DateTime.Now,
                 TongTien = (decimal)_cart.GetTotalAmount(),
@@ -171,6 +171,7 @@ namespace GUI
                 if (formPayment.IsSuccess)
                 {
                     Close();
+                    Program.FormLogin.FormMain.btnPOS.PerformClick();
                 }
             };
             formPayment.ShowDialog();
