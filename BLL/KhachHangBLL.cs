@@ -35,5 +35,15 @@ namespace BLL
         {
             return loyaltyUse >= 0 && loyaltyUse <= customer.DiemTichLuy;
         }
+
+        /// <summary>
+        /// Update customer
+        /// </summary>
+        /// <param name="customer">Customer</param>
+        /// <returns>True if perform successful, false otherwise</returns>
+        public static bool Update(tb_KhachHang customer)
+        {
+            return new KhachHangDAL().Update(customer);
+        }
     }
 }
