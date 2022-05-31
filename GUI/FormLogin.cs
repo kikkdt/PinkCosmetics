@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormLogin : Form
+    public partial class FormLogin : DevExpress.XtraEditors.XtraForm
     {
         public FormMain FormMain;
         public FormLogin()

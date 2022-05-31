@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormPOS : Form
+    public partial class FormPOS : DevExpress.XtraEditors.XtraForm
     {
         private Cart _cart;
 

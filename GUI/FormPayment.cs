@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormPayment : Form
+    public partial class FormPayment : DevExpress.XtraEditors.XtraForm
     {
         public tb_HoaDonBan SalesInvoice { get; set; }
         public List<tb_ChiTietHDBan> SalesInvoiceDetails { get; set; }
