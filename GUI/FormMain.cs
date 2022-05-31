@@ -1,20 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BLL;
+using DTO;
+using System;
 using System.Windows.Forms;
 
 namespace GUI
 {
     public partial class FormMain : Form
     {
-        public FormMain()
+        public static tb_NhanVien Employee { get; set; }
+        public static tb_TaiKhoan Account { get; set; }
+
+        public FormMain(tb_TaiKhoan account)
         {
             InitializeComponent();
+            Account = account;
+            Employee = NhanVienBLL.GetEmployeeByAccount(account.Username);
+        }
+
+        private void BtnPOS_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                FormPOS formPOS = new FormPOS
+                {
+                    MdiParent = this,
+                    Dock = DockStyle.Fill,
+                    FormBorderStyle = FormBorderStyle.None
+                };
+                formPOS.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
