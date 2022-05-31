@@ -88,8 +88,6 @@ namespace GUI
             }
         }
 
-        #endregion Handle event
-
         /// <summary>
         /// Handle customer search
         /// </summary>
@@ -176,5 +174,7 @@ namespace GUI
             };
             formPayment.ShowDialog();
         }
+
+        #endregion Handle event
     }
 }

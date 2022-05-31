@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPayment));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnPayout = new DevExpress.XtraEditors.SimpleButton();
             this.linkLoyalty = new System.Windows.Forms.LinkLabel();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.lblDiscount = new System.Windows.Forms.Label();
             this.lblNeedToPay = new System.Windows.Forms.Label();
             this.lblExcessCash = new System.Windows.Forms.Label();
-            this.btnPayout = new DevExpress.XtraEditors.SimpleButton();
             this.spinMoneyGiven = new DevExpress.XtraEditors.SpinEdit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinMoneyGiven.Properties)).BeginInit();
@@ -52,6 +52,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.btnPayout, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.linkLoyalty, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblCustomerName, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
@@ -63,7 +64,6 @@
             this.tableLayoutPanel1.Controls.Add(this.lblDiscount, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblNeedToPay, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblExcessCash, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.btnPayout, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.spinMoneyGiven, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -78,17 +78,39 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(582, 673);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(598, 510);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // btnPayout
+            // 
+            this.btnPayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPayout.Appearance.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnPayout.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayout.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnPayout.Appearance.Options.UseBackColor = true;
+            this.btnPayout.Appearance.Options.UseFont = true;
+            this.btnPayout.Appearance.Options.UseForeColor = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.btnPayout, 2);
+            this.btnPayout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPayout.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.btnPayout.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnPayout.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPayout.ImageOptions.SvgImage")));
+            this.btnPayout.Location = new System.Drawing.Point(13, 437);
+            this.btnPayout.Name = "btnPayout";
+            this.btnPayout.Size = new System.Drawing.Size(572, 60);
+            this.btnPayout.TabIndex = 15;
+            this.btnPayout.Text = "THANH TOÁN";
+            this.btnPayout.Click += new System.EventHandler(this.BtnPayout_Click);
             // 
             // linkLoyalty
             // 
             this.linkLoyalty.AutoSize = true;
             this.linkLoyalty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.linkLoyalty.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.linkLoyalty.Location = new System.Drawing.Point(294, 10);
+            this.linkLoyalty.Location = new System.Drawing.Point(302, 10);
             this.linkLoyalty.Name = "linkLoyalty";
-            this.linkLoyalty.Size = new System.Drawing.Size(275, 60);
+            this.linkLoyalty.Size = new System.Drawing.Size(283, 60);
             this.linkLoyalty.TabIndex = 7;
             this.linkLoyalty.TabStop = true;
             this.linkLoyalty.Text = "Điểm tích luỹ";
@@ -102,7 +124,7 @@
             this.lblCustomerName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomerName.Location = new System.Drawing.Point(13, 10);
             this.lblCustomerName.Name = "lblCustomerName";
-            this.lblCustomerName.Size = new System.Drawing.Size(275, 60);
+            this.lblCustomerName.Size = new System.Drawing.Size(283, 60);
             this.lblCustomerName.TabIndex = 0;
             this.lblCustomerName.Text = "Tên khách hàng";
             this.lblCustomerName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -155,7 +177,7 @@
             // lblTotalAmount
             // 
             this.lblTotalAmount.AutoSize = true;
-            this.lblTotalAmount.Location = new System.Drawing.Point(294, 70);
+            this.lblTotalAmount.Location = new System.Drawing.Point(302, 70);
             this.lblTotalAmount.Name = "lblTotalAmount";
             this.lblTotalAmount.Size = new System.Drawing.Size(64, 24);
             this.lblTotalAmount.TabIndex = 8;
@@ -164,7 +186,7 @@
             // lblDiscount
             // 
             this.lblDiscount.AutoSize = true;
-            this.lblDiscount.Location = new System.Drawing.Point(294, 130);
+            this.lblDiscount.Location = new System.Drawing.Point(302, 130);
             this.lblDiscount.Name = "lblDiscount";
             this.lblDiscount.Size = new System.Drawing.Size(64, 24);
             this.lblDiscount.TabIndex = 9;
@@ -173,7 +195,7 @@
             // lblNeedToPay
             // 
             this.lblNeedToPay.AutoSize = true;
-            this.lblNeedToPay.Location = new System.Drawing.Point(294, 190);
+            this.lblNeedToPay.Location = new System.Drawing.Point(302, 190);
             this.lblNeedToPay.Name = "lblNeedToPay";
             this.lblNeedToPay.Size = new System.Drawing.Size(64, 24);
             this.lblNeedToPay.TabIndex = 10;
@@ -182,33 +204,11 @@
             // lblExcessCash
             // 
             this.lblExcessCash.AutoSize = true;
-            this.lblExcessCash.Location = new System.Drawing.Point(294, 310);
+            this.lblExcessCash.Location = new System.Drawing.Point(302, 310);
             this.lblExcessCash.Name = "lblExcessCash";
             this.lblExcessCash.Size = new System.Drawing.Size(64, 24);
             this.lblExcessCash.TabIndex = 11;
             this.lblExcessCash.Text = "label9";
-            // 
-            // btnPayout
-            // 
-            this.btnPayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPayout.Appearance.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnPayout.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayout.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnPayout.Appearance.Options.UseBackColor = true;
-            this.btnPayout.Appearance.Options.UseFont = true;
-            this.btnPayout.Appearance.Options.UseForeColor = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.btnPayout, 2);
-            this.btnPayout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPayout.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.btnPayout.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnPayout.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPayout.ImageOptions.SvgImage")));
-            this.btnPayout.Location = new System.Drawing.Point(13, 600);
-            this.btnPayout.Name = "btnPayout";
-            this.btnPayout.Size = new System.Drawing.Size(556, 60);
-            this.btnPayout.TabIndex = 13;
-            this.btnPayout.Text = "THANH TOÁN";
-            this.btnPayout.Click += new System.EventHandler(this.BtnPayout_Click);
             // 
             // spinMoneyGiven
             // 
@@ -218,7 +218,7 @@
             0,
             0,
             0});
-            this.spinMoneyGiven.Location = new System.Drawing.Point(294, 253);
+            this.spinMoneyGiven.Location = new System.Drawing.Point(302, 253);
             this.spinMoneyGiven.Name = "spinMoneyGiven";
             this.spinMoneyGiven.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spinMoneyGiven.Properties.Appearance.Options.UseFont = true;
@@ -229,16 +229,17 @@
             this.spinMoneyGiven.Properties.MaskSettings.Set("autoHideDecimalSeparator", null);
             this.spinMoneyGiven.Properties.MaskSettings.Set("hideInsignificantZeros", null);
             this.spinMoneyGiven.Properties.NullText = "0";
-            this.spinMoneyGiven.Size = new System.Drawing.Size(275, 30);
+            this.spinMoneyGiven.Size = new System.Drawing.Size(283, 30);
             this.spinMoneyGiven.TabIndex = 14;
             this.spinMoneyGiven.TextChanged += new System.EventHandler(this.SpinMoneyGiven_TextChanged);
             this.spinMoneyGiven.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SpinMoneyGiven_KeyPress);
             // 
             // FormPayment
             // 
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 673);
+            this.ClientSize = new System.Drawing.Size(598, 510);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -270,7 +271,7 @@
         private System.Windows.Forms.Label lblDiscount;
         private System.Windows.Forms.Label lblNeedToPay;
         private System.Windows.Forms.Label lblExcessCash;
-        private DevExpress.XtraEditors.SimpleButton btnPayout;
         private DevExpress.XtraEditors.SpinEdit spinMoneyGiven;
+        private DevExpress.XtraEditors.SimpleButton btnPayout;
     }
 }

@@ -33,7 +33,29 @@ namespace BLL
         public static bool Insert(tb_HoaDonBan salesInvoice, List<tb_ChiTietHDBan> salesInvoiceDetails)
         {
             salesInvoice.TrangThai = true;
-            return new HoaDonBanDAL().Insert(salesInvoice, salesInvoiceDetails);
+            // Insert invoice and invoice details into database
+            if (new HoaDonBanDAL().Insert(salesInvoice, salesInvoiceDetails))
+            {
+                // Update inventory quantity
+                foreach (var s in salesInvoiceDetails)
+                {
+                    tb_SanPham product = SanPhamBLL.GetProduct(s.MaSanPham);
+                    product.TonKho -= s.SoLuong;
+                    product.DaMua++;
+                    SanPhamBLL.Update(product);
+                }
+
+                // Update loyalty for customer
+                if (salesInvoice.MaKH != null)
+                {
+                    tb_KhachHang customer = KhachHangBLL.GetCustomer(salesInvoice.MaKH);
+                    customer.DiemTichLuy += (int)salesInvoice.ThanhTien - salesInvoice.GiamGia == null ? 0 : (int)salesInvoice.GiamGia;
+                    KhachHangBLL.Update(customer);
+                }
+
+                return true;
+            }
+            else return false;
         }
     }
 }
