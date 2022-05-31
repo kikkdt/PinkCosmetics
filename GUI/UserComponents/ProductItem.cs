@@ -101,7 +101,7 @@ namespace GUI.UserComponents
         private void ItemProductControl_MouseHover(object sender, EventArgs e)
         {
             BorderStyle = BorderStyle.FixedSingle;
-            toolTipController1.ShowHint(Product.TenSP + " - " + lblPrice.Text);
+            toolTipController1.ShowHint($"{Product.TenSP} - {lblPrice.Text} - Tồn: {Product.TonKho}");
         }
 
         #endregion Handle event
