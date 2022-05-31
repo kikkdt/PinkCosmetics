@@ -26,5 +26,34 @@ namespace DAL
         {
             return dataContext.tb_SanPhams.FirstOrDefault(p => p.MaSanPham.Equals(id));
         }
+
+        /// <summary>
+        /// Update product
+        /// </summary>
+        /// <param name="product">Product</param>
+        /// <returns>True if perform successful, false otherwise</returns>
+        public bool Update(tb_SanPham product)
+        {
+            try
+            {
+                tb_SanPham productUpdate = GetProduct(product.MaSanPham);
+                productUpdate.MaVach = product.MaVach;
+                productUpdate.TenSP = product.TenSP;
+                productUpdate.MaNSP = product.MaNSP;
+                productUpdate.MaThuongHieu = product.MaThuongHieu;
+                productUpdate.GiaVon = product.GiaVon;
+                productUpdate.TonKho = product.TonKho;
+                productUpdate.DaMua = product.DaMua;
+                productUpdate.UrlHinh = product.UrlHinh;
+                productUpdate.MoTa = product.MoTa;
+                productUpdate.DaXoa = product.DaXoa;
+                dataContext.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

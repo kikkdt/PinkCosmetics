@@ -151,7 +151,7 @@ namespace GUI.UserComponents
             CartItem itemCart = new CartItem(cart, chiTietHDBan, index)
             {
                 Parent = _cart.PanelCart,
-                Width = _cart.PanelCart.Width - 25
+                Width = _cart.PanelCart.Width-25
             };
             _cart.PanelCart.Controls.Add(itemCart);
         }

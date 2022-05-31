@@ -49,10 +49,24 @@ namespace GUI
         /// <param name="e"></param>
         private void BtnPayout_Click(object sender, EventArgs e)
         {
-            if (IsValidForm() && HoaDonBanHangBLL.Insert(SalesInvoice, SalesInvoiceDetails))
+            if (IsValidForm())
             {
-                IsSuccess = true;
-                Close();
+                try
+                {
+                    if (HoaDonBanHangBLL.Insert(SalesInvoice, SalesInvoiceDetails))
+                    {
+                        IsSuccess = true;
+                        Close();
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Có lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tiền khách đưa không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

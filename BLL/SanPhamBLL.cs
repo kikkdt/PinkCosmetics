@@ -35,5 +35,15 @@ namespace BLL
         {
             return quantity >= 0 && quantity <= GetProduct(id).TonKho;
         }
+
+        /// <summary>
+        /// Update product
+        /// </summary>
+        /// <param name="product">Product</param>
+        /// <returns>True if perform successful, false otherwise</returns>
+        public static bool Update(tb_SanPham product)
+        {
+            return new SanPhamDAL().Update(product);
+        }
     }
 }
