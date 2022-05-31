@@ -34,6 +34,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtUsername = new DevExpress.XtraEditors.TextEdit();
             this.txtPassword = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).BeginInit();
@@ -57,12 +58,15 @@
             this.btnLogin.Appearance.Options.UseFont = true;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLogin.Location = new System.Drawing.Point(3, 133);
+            this.btnLogin.Location = new System.Drawing.Point(3, 140);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(494, 79);
+            this.btnLogin.Size = new System.Drawing.Size(494, 72);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "ĐĂNG NHẬP";
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
+            this.btnLogin.MouseLeave += new System.EventHandler(this.BtnLogin_MouseLeave);
+            this.btnLogin.MouseHover += new System.EventHandler(this.BtnLogin_MouseHover);
             // 
             // tableLayoutPanel1
             // 
@@ -93,7 +97,7 @@
             this.txtUsername.Properties.ContextImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("txtUsername.Properties.ContextImageOptions.SvgImage")));
             this.txtUsername.Properties.Padding = new System.Windows.Forms.Padding(10);
             this.txtUsername.Size = new System.Drawing.Size(494, 64);
-            this.txtUsername.TabIndex = 2;
+            this.txtUsername.TabIndex = 0;
             // 
             // txtPassword
             // 
@@ -109,7 +113,24 @@
             this.txtPassword.Properties.Padding = new System.Windows.Forms.Padding(10);
             this.txtPassword.Properties.UseSystemPasswordChar = true;
             this.txtPassword.Size = new System.Drawing.Size(494, 64);
-            this.txtPassword.TabIndex = 3;
+            this.txtPassword.TabIndex = 1;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.simpleButton1.ImageOptions.SvgImageSize = new System.Drawing.Size(50, 50);
+            this.simpleButton1.Location = new System.Drawing.Point(638, 12);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.simpleButton1.Size = new System.Drawing.Size(50, 50);
+            this.simpleButton1.TabIndex = 4;
+            this.simpleButton1.ToolTip = "Thoát";
+            this.simpleButton1.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // FormLogin
             // 
@@ -117,11 +138,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(682, 403);
+            this.ClientSize = new System.Drawing.Size(700, 450);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(700, 450);
@@ -145,5 +167,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.TextEdit txtUsername;
         private DevExpress.XtraEditors.TextEdit txtPassword;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
