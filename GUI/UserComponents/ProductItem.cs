@@ -89,7 +89,6 @@ namespace GUI.UserComponents
                 {
                     MessageBox.Show("Số lượng tồn kho không đủ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
         }
 

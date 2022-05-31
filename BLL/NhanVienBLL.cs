@@ -14,6 +14,7 @@ namespace BLL
         {
             return new NhanVienDAL().GetEmployee(id);
         }
+
         /// <summary>
         /// Get a employee by account
         /// </summary>

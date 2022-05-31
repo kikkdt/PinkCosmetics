@@ -169,6 +169,7 @@
             // 
             // FormLoyalty
             // 
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 253);
@@ -179,7 +180,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(800, 300);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(800, 300);
+            this.MinimumSize = new System.Drawing.Size(784, 293);
             this.Name = "FormLoyalty";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dùng điểm tích luỹ";

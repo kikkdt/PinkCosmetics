@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormMain : Form
+    public partial class FormMain : DevExpress.XtraEditors.XtraForm
     {
         public static tb_NhanVien Employee { get; set; }
         public static tb_TaiKhoan Account { get; set; }

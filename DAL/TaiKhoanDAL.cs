@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DTO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTO;
 
 namespace DAL
 {
     public class TaiKhoanDAL
     {
         private PinkCosmeticsDataContext dataContext = new PinkCosmeticsDataContext();
+
         /// <summary>
         /// Get an account
         /// </summary>

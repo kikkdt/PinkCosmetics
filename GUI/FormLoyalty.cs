@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormLoyalty : Form
+    public partial class FormLoyalty : DevExpress.XtraEditors.XtraForm
     {
         private int _loyaltyUse = 0;
         public tb_KhachHang Customer { get; set; }

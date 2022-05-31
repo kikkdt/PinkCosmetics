@@ -6,6 +6,7 @@ namespace GUI
     internal static class Program
     {
         public static FormLogin FormLogin { get; set; }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
