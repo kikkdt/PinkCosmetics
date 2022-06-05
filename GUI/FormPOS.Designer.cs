@@ -281,7 +281,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormPOS";
-            this.Text = "FormPOS";
+            this.Text = "Hoá đơn";
             this.Resize += new System.EventHandler(this.FormPOS_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);

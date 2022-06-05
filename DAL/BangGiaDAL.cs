@@ -14,7 +14,7 @@ namespace DAL
         /// <returns>List of price types</returns>
         public List<tb_BangGia> GetPriceTypes()
         {
-            return dataContext.tb_BangGias.Select(x => x).ToList();
+            return dataContext.tb_BangGias.Where(x => x.DaXoa == false).ToList();
         }
     }
 }

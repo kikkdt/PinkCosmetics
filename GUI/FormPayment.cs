@@ -14,7 +14,7 @@ namespace GUI
         /// <summary>
         /// Flag for successful payment
         /// </summary>
-        public bool IsSuccess = false;
+        public bool IsSuccess;
 
         public FormPayment(tb_HoaDonBan salesInvoice, List<tb_ChiTietHDBan> salesInvoiceDetails)
         {
@@ -53,13 +53,13 @@ namespace GUI
             {
                 try
                 {
-                    if (HoaDonBanHangBLL.Insert(SalesInvoice, SalesInvoiceDetails))
+                    if (HoaDonBanBLL.Insert(SalesInvoice, SalesInvoiceDetails))
                     {
                         IsSuccess = true;
                         Close();
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Có lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

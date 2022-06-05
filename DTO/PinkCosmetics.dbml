@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbPinkCosmetics" Class="PinkCosmeticsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=kikkdt-g14;Initial Catalog=dbPinkCosmetics;User ID=sa" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="dbPinkCosmeticsConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=kikkdt-g14;Initial Catalog=dbPinkCosmetics;User ID=sa" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="dbPinkCosmeticsConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tb_BangGia" Member="tb_BangGias">
     <Type Name="tb_BangGia">
       <Column Name="MaBangGia" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -77,10 +77,12 @@
   <Table Name="dbo.tb_HoaDonNhap" Member="tb_HoaDonNhaps">
     <Type Name="tb_HoaDonNhap">
       <Column Name="MaHDNhap" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaPhieuDat" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
       <Column Name="MaNV" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
       <Column Name="NgayLap" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Association Name="tb_HoaDonNhap_tb_ChiTietHDNhap" Member="tb_ChiTietHDNhaps" ThisKey="MaHDNhap" OtherKey="MaHDNhap" Type="tb_ChiTietHDNhap" />
       <Association Name="tb_NhanVien_tb_HoaDonNhap" Member="tb_NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="tb_NhanVien" IsForeignKey="true" />
+      <Association Name="tb_PhieuDatHang_tb_HoaDonNhap" Member="tb_PhieuDatHang" ThisKey="MaPhieuDat" OtherKey="MaPhieuDat" Type="tb_PhieuDatHang" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tb_Identity" Member="tb_Identities">
@@ -135,9 +137,11 @@
   <Table Name="dbo.tb_PhieuDatHang" Member="tb_PhieuDatHangs">
     <Type Name="tb_PhieuDatHang">
       <Column Name="MaPhieuDat" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaNV" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
       <Column Name="NgayLap" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="tb_PhieuDatHang_tb_ChiTietPhieuDat" Member="tb_ChiTietPhieuDats" ThisKey="MaPhieuDat" OtherKey="MaPhieuDat" Type="tb_ChiTietPhieuDat" />
+      <Association Name="tb_PhieuDatHang_tb_HoaDonNhap" Member="tb_HoaDonNhaps" ThisKey="MaPhieuDat" OtherKey="MaPhieuDat" Type="tb_HoaDonNhap" />
       <Association Name="tb_NhanVien_tb_PhieuDatHang" Member="tb_NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="tb_NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
@@ -169,6 +173,33 @@
       <Column Name="IsAdmin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="DaXoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="tb_TaiKhoan_tb_NhanVien" Member="tb_NhanViens" ThisKey="Username" OtherKey="Username" Type="tb_NhanVien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewChiTietNhapHang" Member="ViewChiTietNhapHangs">
+    <Type Name="ViewChiTietNhapHang">
+      <Column Name="MaSanPham" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="TenSP" Type="System.String" DbType="NVarChar(120) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuongDat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuongNhap" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GiaNhap" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewPhieuDatHang" Member="ViewPhieuDatHangs">
+    <Type Name="ViewPhieuDatHang">
+      <Column Name="MaPhieuDat" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayLap" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewChiTietPhieuDatHang" Member="ViewChiTietPhieuDatHangs">
+    <Type Name="ViewChiTietPhieuDatHang">
+      <Column Name="MaPhieuDat" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="MaSanPham" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenSP" Type="System.String" DbType="NVarChar(120) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

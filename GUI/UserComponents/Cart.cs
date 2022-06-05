@@ -27,7 +27,7 @@ namespace GUI.UserComponents
         {
             InitializeComponent();
 
-            InvoiceID = HoaDonBanHangBLL.CreateSalesInvoiceID();
+            InvoiceID = HoaDonBanBLL.CreateSalesInvoiceID();
         }
 
         /// <summary>

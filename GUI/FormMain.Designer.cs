@@ -43,6 +43,8 @@
             this.btnImportGoods = new DevExpress.XtraBars.BarButtonItem();
             this.btnChangePassword = new DevExpress.XtraBars.BarButtonItem();
             this.btnLogOut = new DevExpress.XtraBars.BarButtonItem();
+            this.btnOrder = new DevExpress.XtraBars.BarButtonItem();
+            this.btnListOfOrders = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonSell = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonSellGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonGoods = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -51,7 +53,7 @@
             this.ribbonBrandGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonTransaction = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonAccount = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -62,6 +64,7 @@
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Teal;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -77,9 +80,11 @@
             this.btnInvoice,
             this.btnImportGoods,
             this.btnChangePassword,
-            this.btnLogOut});
+            this.btnLogOut,
+            this.btnOrder,
+            this.btnListOfOrders});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 24;
+            this.ribbonControl1.MaxItemId = 26;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonSell,
@@ -184,6 +189,24 @@
             this.btnLogOut.LargeWidth = 100;
             this.btnLogOut.Name = "btnLogOut";
             // 
+            // btnOrder
+            // 
+            this.btnOrder.Caption = "Tạo phiếu đặt hàng";
+            this.btnOrder.Id = 24;
+            this.btnOrder.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnOrder.ImageOptions.SvgImage")));
+            this.btnOrder.LargeWidth = 100;
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnOrder_ItemClick);
+            // 
+            // btnListOfOrders
+            // 
+            this.btnListOfOrders.Caption = "Danh sách đặt hàng";
+            this.btnListOfOrders.Id = 25;
+            this.btnListOfOrders.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnListOfOrders.ImageOptions.SvgImage")));
+            this.btnListOfOrders.LargeWidth = 100;
+            this.btnListOfOrders.Name = "btnListOfOrders";
+            this.btnListOfOrders.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListOfOrders_ItemClick);
+            // 
             // ribbonSell
             // 
             this.ribbonSell.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -233,7 +256,7 @@
             // 
             this.ribbonTransaction.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup5});
             this.ribbonTransaction.Name = "ribbonTransaction";
             this.ribbonTransaction.Text = "Giao dịch";
             // 
@@ -242,10 +265,12 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnInvoice);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
-            // ribbonPageGroup2
+            // ribbonPageGroup5
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnImportGoods);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnOrder);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnListOfOrders);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "Đặt && Nhập hàng";
             // 
             // ribbonAccount
             // 
@@ -274,12 +299,13 @@
             // 
             // FormMain
             // 
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
             this.Controls.Add(this.ribbonControl1);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("FormMain.IconOptions.Icon")));
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMain";
@@ -312,7 +338,6 @@
         private DevExpress.XtraBars.BarButtonItem btnInvoice;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonTransaction;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem btnImportGoods;
         private DevExpress.XtraBars.BarButtonItem btnChangePassword;
         private DevExpress.XtraBars.BarButtonItem btnLogOut;
@@ -320,5 +345,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraBars.BarButtonItem btnOrder;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        public DevExpress.XtraBars.BarButtonItem btnListOfOrders;
     }
 }

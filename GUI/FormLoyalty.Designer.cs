@@ -34,12 +34,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblLoyalty = new System.Windows.Forms.Label();
             this.spinLoyaltyUse = new DevExpress.XtraEditors.SpinEdit();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinLoyaltyUse.Properties)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -51,7 +51,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblLoyalty, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.spinLoyaltyUse, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
@@ -117,19 +117,8 @@
             this.spinLoyaltyUse.Size = new System.Drawing.Size(369, 40);
             this.spinLoyaltyUse.TabIndex = 3;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(394, 138);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(371, 97);
-            this.panel1.TabIndex = 5;
-            // 
             // btnSave
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Appearance.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Appearance.ForeColor = System.Drawing.Color.White;
@@ -137,19 +126,19 @@
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Appearance.Options.UseForeColor = true;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSave.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
-            this.btnSave.Location = new System.Drawing.Point(218, 33);
+            this.btnSave.Location = new System.Drawing.Point(224, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(150, 50);
+            this.btnSave.Size = new System.Drawing.Size(144, 44);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Lưu";
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Appearance.BackColor = System.Drawing.Color.Crimson;
             this.btnClose.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Appearance.ForeColor = System.Drawing.Color.White;
@@ -157,15 +146,33 @@
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.Appearance.Options.UseForeColor = true;
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClose.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.btnClose.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnClose.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnClose.ImageOptions.SvgImage")));
-            this.btnClose.Location = new System.Drawing.Point(62, 33);
+            this.btnClose.Location = new System.Drawing.Point(74, 3);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(150, 50);
+            this.btnClose.Size = new System.Drawing.Size(144, 44);
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Đóng";
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel2.Controls.Add(this.btnSave, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnClose, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(394, 185);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(371, 50);
+            this.tableLayoutPanel2.TabIndex = 6;
             // 
             // FormLoyalty
             // 
@@ -188,7 +195,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinLoyaltyUse.Properties)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -201,7 +208,7 @@
         private System.Windows.Forms.Label lblLoyalty;
         private DevExpress.XtraEditors.SpinEdit spinLoyaltyUse;
         private DevExpress.XtraEditors.SimpleButton btnClose;
-        private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.SimpleButton btnSave;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using BLL;
 using DTO;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GUI
@@ -17,22 +18,54 @@ namespace GUI
             Employee = NhanVienBLL.GetEmployeeByAccount(account.Username);
         }
 
-        private void BtnPOS_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        /// <summary>
+        /// Perform opening specified form
+        /// </summary>
+        /// <param name="formChildren">Form to be opened</param>
+        /// <param name="formName">Form name</param>
+        private void OpenChildForm(Form formChildren, string formName)
         {
             try
             {
-                FormPOS formPOS = new FormPOS
-                {
-                    MdiParent = this,
-                    Dock = DockStyle.Fill,
-                    FormBorderStyle = FormBorderStyle.None
-                };
-                formPOS.Show();
+                formChildren.MdiParent = this;
+                formChildren.Dock = DockStyle.Fill;
+                formChildren.FormBorderStyle = FormBorderStyle.None;
+                formChildren.Text = $@"{formName} {CountChildForm(formChildren)}";
+
+                formChildren.Show();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        /// <summary>
+        /// Get count of the form in an array of MDI child forms
+        /// </summary>
+        /// <param name="formChildren">Forms to be counted</param>
+        /// <returns></returns>
+        private int CountChildForm(Form formChildren)
+        {
+            return MdiChildren.Count(child => child.Name.Equals(formChildren.Name));
+        }
+
+        private void BtnPOS_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormPOS formPOS = new FormPOS();
+            OpenChildForm(formPOS, "Hoá đơn");
+        }
+
+        private void BtnOrder_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormOrder formOrder = new FormOrder();
+            OpenChildForm(formOrder, "Đặt hàng");
+        }
+
+        private void BtnListOfOrders_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormListOfOrders formListOfOrders = new FormListOfOrders();
+            OpenChildForm(formListOfOrders, "Danh sách đặt hàng");
         }
     }
 }

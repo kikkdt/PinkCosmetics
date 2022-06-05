@@ -1,4 +1,5 @@
 ﻿using DTO;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace DAL
@@ -6,6 +7,15 @@ namespace DAL
     public class NhanVienDAL
     {
         private PinkCosmeticsDataContext dataContext = new PinkCosmeticsDataContext();
+
+        /// <summary>
+        /// Get a list of employees
+        /// </summary>
+        /// <returns></returns>
+        public List<tb_NhanVien> GetEmployees()
+        {
+            return dataContext.tb_NhanViens.Where(x => x.DaXoa == false).ToList();
+        }
 
         /// <summary>
         /// Get a employee by ID

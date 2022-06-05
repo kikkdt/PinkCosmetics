@@ -38,24 +38,29 @@
   <ItemGroup>
     <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Images.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormImportGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImportGoods.Designer.cs">
+      <DependentUpon>FormImportGoods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListOfOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListOfOrders.Designer.cs">
+      <DependentUpon>FormListOfOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +78,18 @@
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrder.Designer.cs">
+      <DependentUpon>FormOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrderDetail.Designer.cs">
+      <DependentUpon>FormOrderDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPOS.cs">
       <SubType>Form</SubType>
@@ -106,6 +123,12 @@
     <Compile Include="UserComponents\Cart.Designer.cs">
       <DependentUpon>Cart.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormImportGoods.resx">
+      <DependentUpon>FormImportGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListOfOrders.resx">
+      <DependentUpon>FormListOfOrders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +137,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrder.resx">
+      <DependentUpon>FormOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrderDetail.resx">
+      <DependentUpon>FormOrderDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPOS.resx">
       <DependentUpon>FormPOS.cs</DependentUpon>

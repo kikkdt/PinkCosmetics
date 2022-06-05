@@ -15,7 +15,7 @@ namespace DAL
         /// <returns></returns>
         public tb_TaiKhoan GetAccount(string username, string password)
         {
-            return dataContext.tb_TaiKhoans.FirstOrDefault(acc => acc.Username.Equals(username) && acc.Password.Equals(password));
+            return dataContext.tb_TaiKhoans.FirstOrDefault(acc => acc.Username.Equals(username) && acc.Password.Equals(password) && acc.DaXoa == false);
         }
     }
 }

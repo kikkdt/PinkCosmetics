@@ -1,10 +1,20 @@
 ﻿using DAL;
 using DTO;
+using System.Collections.Generic;
 
 namespace BLL
 {
     public class NhanVienBLL
     {
+        /// <summary>
+        /// Get a list of employees
+        /// </summary>
+        /// <returns></returns>
+        public static List<tb_NhanVien> GetEmployees()
+        {
+            return new NhanVienDAL().GetEmployees();
+        }
+
         /// <summary>
         /// Get a employee by ID
         /// </summary>

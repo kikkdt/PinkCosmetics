@@ -66,8 +66,8 @@ namespace GUI
         /// </summary>
         private void LoadListboxCustomer()
         {
-            List<tb_KhachHang> khachHangs = KhachHangBLL.GetCustomers();
-            listBoxCustomer.DataSource = khachHangs;
+            List<tb_KhachHang> customers = KhachHangBLL.GetCustomers();
+            listBoxCustomer.DataSource = customers;
             searchCustomer.ClearFilter();
         }
 
@@ -116,7 +116,7 @@ namespace GUI
             if (listBoxCustomer.SelectedValue != null)
             {
                 tb_KhachHang customer = (listBoxCustomer.SelectedValue as tb_KhachHang);
-                searchCustomer.Text = customer.HoTen;
+                searchCustomer.Text = customer?.HoTen;
                 listBoxCustomer.Visible = false;
                 _cart.Customer = customer;
             }

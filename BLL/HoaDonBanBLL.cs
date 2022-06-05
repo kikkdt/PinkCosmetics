@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace BLL
 {
-    public class HoaDonBanHangBLL
+    public class HoaDonBanBLL
     {
         /// <summary>
         /// Create sales invoice ID by concatenating the prefix "HD" with the value selected in the Identity table as the suffix

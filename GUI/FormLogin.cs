@@ -8,7 +8,7 @@ namespace GUI
 {
     public partial class FormLogin : Form
     {
-        public FormMain FormMain;
+        public FormMain FormMain { get; set; }
 
         public FormLogin()
         {
