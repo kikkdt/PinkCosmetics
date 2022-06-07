@@ -94,7 +94,7 @@ void Forecast(IDataView testData, int horizon, TimeSeriesPredictionEngine<ModelI
     }
 }
 
-public class Utilities
+public static class Utilities
 {
     /// <summary>
     /// Format number with thousand separator
@@ -104,11 +104,9 @@ public class Utilities
     /// <returns></returns>
     public static string FormatWithThousandSeparator(double number, string currencyUnit = null)
     {
-
         return string.Format("{0:#,##0}" + (string.IsNullOrEmpty(currencyUnit) ? string.Empty : " " + currencyUnit), number);
     }
 }
-
 
 public class ModelInput
 {

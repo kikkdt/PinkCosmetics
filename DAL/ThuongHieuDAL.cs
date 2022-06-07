@@ -6,7 +6,7 @@ namespace DAL
 {
     public class ThuongHieuDAL
     {
-        private PinkCosmeticsDataContext dataContext = new PinkCosmeticsDataContext();
+        private readonly PinkCosmetics _dataContext = new PinkCosmetics();
 
         /// <summary>
         /// Get all brands
@@ -14,7 +14,7 @@ namespace DAL
         /// <returns>List of brands</returns>
         public List<tb_ThuongHieu> GetBrands()
         {
-            return dataContext.tb_ThuongHieus.Where(x => x.DaXoa == false).ToList();
+            return _dataContext.tb_ThuongHieu.Where(x => x.DaXoa == false).ToList();
         }
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace DAL
         /// <returns>Brand</returns>
         public tb_ThuongHieu GetBrand(int id)
         {
-            return dataContext.tb_ThuongHieus.FirstOrDefault(x => x.MaThuongHieu == id);
+            return _dataContext.tb_ThuongHieu.FirstOrDefault(x => x.MaThuongHieu == id);
         }
     }
 }

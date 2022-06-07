@@ -7,7 +7,7 @@ namespace DAL
 {
     public class HoaDonNhapDAL
     {
-        private PinkCosmeticsDataContext dataContext = new PinkCosmeticsDataContext();
+        private readonly PinkCosmetics _dataContext = new PinkCosmetics();
 
         /// <summary>
         /// Get all of import invoices
@@ -15,7 +15,7 @@ namespace DAL
         /// <returns></returns>
         public List<tb_HoaDonNhap> GetImportInvoices()
         {
-            return dataContext.tb_HoaDonNhaps.ToList();
+            return _dataContext.tb_HoaDonNhap.ToList();
         }
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace DAL
         /// <returns></returns>
         public tb_HoaDonNhap GetImportInvoice(string id)
         {
-            return dataContext.tb_HoaDonNhaps.FirstOrDefault(x => x.MaHDNhap.Equals(id));
+            return _dataContext.tb_HoaDonNhap.FirstOrDefault(x => x.MaHDNhap == id);
         }
 
         /// <summary>
@@ -38,9 +38,9 @@ namespace DAL
         {
             try
             {
-                importInvoice.tb_ChiTietHDNhaps.AddRange(importInvoiceDetails);
-                dataContext.tb_HoaDonNhaps.InsertOnSubmit(importInvoice);
-                dataContext.SubmitChanges();
+                _dataContext.tb_ChiTietHDNhap.AddRange(importInvoiceDetails);
+                _dataContext.tb_HoaDonNhap.Add(importInvoice);
+                _dataContext.SaveChanges();
                 return true;
             }
             catch (Exception ex)
@@ -61,15 +61,15 @@ namespace DAL
             {
                 tb_HoaDonNhap importInvoiceUpdate = GetImportInvoice(importInvoice.MaHDNhap);
                 foreach (var importInvoiceDetail
-                         in importInvoiceUpdate.tb_ChiTietHDNhaps)
+                         in importInvoiceUpdate.tb_ChiTietHDNhap)
                 {
-                    var tmp = importInvoiceDetails.Find(x => x.MaSanPham.Equals(importInvoiceDetail.MaSanPham));
+                    var tmp = importInvoiceDetails.Find(x => x.MaSanPham == importInvoiceDetail.MaSanPham);
                     importInvoiceDetail.SoLuong = tmp.SoLuong;
                     importInvoiceDetail.GiaNhap = tmp.GiaNhap;
                     importInvoiceDetail.ThanhTien = tmp.ThanhTien;
                 }
 
-                dataContext.SubmitChanges();
+                _dataContext.SaveChanges();
                 return true;
             }
             catch (Exception ex)

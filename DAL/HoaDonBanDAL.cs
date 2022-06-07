@@ -7,7 +7,7 @@ namespace DAL
 {
     public class HoaDonBanDAL
     {
-        private PinkCosmeticsDataContext dataContext = new PinkCosmeticsDataContext();
+        private readonly PinkCosmetics _dataContext = new PinkCosmetics();
 
         /// <summary>
         /// Get all sales invoice
@@ -15,7 +15,7 @@ namespace DAL
         /// <returns>List of sales invoices</returns>
         public List<tb_HoaDonBan> GetSalesInvoices()
         {
-            return dataContext.tb_HoaDonBans.ToList();
+            return _dataContext.tb_HoaDonBan.ToList();
         }
 
         /// <summary>
@@ -28,9 +28,9 @@ namespace DAL
         {
             try
             {
-                salesInvoice.tb_ChiTietHDBans.AddRange(salesInvoiceDetails);
-                dataContext.tb_HoaDonBans.InsertOnSubmit(salesInvoice);
-                dataContext.SubmitChanges();
+                _dataContext.tb_ChiTietHDBan.AddRange(salesInvoiceDetails);
+                _dataContext.tb_HoaDonBan.Add(salesInvoice);
+                _dataContext.SaveChanges();
                 return true;
             }
             catch (Exception ex)

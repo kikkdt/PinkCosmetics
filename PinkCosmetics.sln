@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{38DFE13F-E5A5-4444-98A4-06ACA7240DF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelsTrainer", "ModelsTrainer\ModelsTrainer.csproj", "{019BAF35-7882-4430-9320-EF88181E50E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelsTrainer", "ModelsTrainer\ModelsTrainer.csproj", "{019BAF35-7882-4430-9320-EF88181E50E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

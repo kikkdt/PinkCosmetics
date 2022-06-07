@@ -7,7 +7,7 @@ namespace DAL
 {
     public class PhieuDatHangDAL
     {
-        private PinkCosmeticsDataContext dataContext = new PinkCosmeticsDataContext();
+        private readonly PinkCosmetics _dataContext = new PinkCosmetics();
 
         /// <summary>
         /// Get all of orders
@@ -15,7 +15,7 @@ namespace DAL
         /// <returns></returns>
         public List<tb_PhieuDatHang> GetOrders()
         {
-            return dataContext.tb_PhieuDatHangs.ToList();
+            return _dataContext.tb_PhieuDatHang.ToList();
         }
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace DAL
         /// <returns></returns>
         public tb_PhieuDatHang GetOrder(string id)
         {
-            return dataContext.tb_PhieuDatHangs.FirstOrDefault(x => x.MaPhieuDat.Equals(id));
+            return _dataContext.tb_PhieuDatHang.FirstOrDefault(x => x.MaPhieuDat == id);
         }
 
         /// <summary>
@@ -38,9 +38,9 @@ namespace DAL
         {
             try
             {
-                order.tb_ChiTietPhieuDats.AddRange(orderDetails);
-                dataContext.tb_PhieuDatHangs.InsertOnSubmit(order);
-                dataContext.SubmitChanges();
+                _dataContext.tb_ChiTietPhieuDat.AddRange(orderDetails);
+                _dataContext.tb_PhieuDatHang.Add(order);
+                _dataContext.SaveChanges();
                 return true;
             }
             catch (Exception ex)
@@ -61,7 +61,7 @@ namespace DAL
             {
                 tb_PhieuDatHang orderUpdate = GetOrder(order.MaPhieuDat);
                 orderUpdate.TrangThai = order.TrangThai;
-                dataContext.SubmitChanges();
+                _dataContext.SaveChanges();
 
                 return true;
             }

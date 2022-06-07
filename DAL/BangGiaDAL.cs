@@ -6,7 +6,7 @@ namespace DAL
 {
     public class BangGiaDAL
     {
-        private PinkCosmeticsDataContext dataContext = new PinkCosmeticsDataContext();
+        private readonly PinkCosmetics _dataContext = new PinkCosmetics();
 
         /// <summary>
         /// Get all price types
@@ -14,7 +14,7 @@ namespace DAL
         /// <returns>List of price types</returns>
         public List<tb_BangGia> GetPriceTypes()
         {
-            return dataContext.tb_BangGias.Where(x => x.DaXoa == false).ToList();
+            return _dataContext.tb_BangGia.Where(x => x.DaXoa == false).ToList();
         }
     }
 }

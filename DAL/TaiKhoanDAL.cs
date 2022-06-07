@@ -5,7 +5,7 @@ namespace DAL
 {
     public class TaiKhoanDAL
     {
-        private PinkCosmeticsDataContext dataContext = new PinkCosmeticsDataContext();
+        private readonly PinkCosmetics _dataContext = new PinkCosmetics();
 
         /// <summary>
         /// Get an account
@@ -15,7 +15,7 @@ namespace DAL
         /// <returns></returns>
         public tb_TaiKhoan GetAccount(string username, string password)
         {
-            return dataContext.tb_TaiKhoans.FirstOrDefault(acc => acc.Username.Equals(username) && acc.Password.Equals(password) && acc.DaXoa == false);
+            return _dataContext.tb_TaiKhoan.FirstOrDefault(acc => acc.Username == username && acc.Password == password && acc.DaXoa == false);
         }
     }
 }

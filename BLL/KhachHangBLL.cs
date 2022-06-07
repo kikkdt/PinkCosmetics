@@ -18,11 +18,11 @@ namespace BLL
         /// <summary>
         /// Get a customer by ID
         /// </summary>
-        /// <param name="maKH">Customer ID</param>
+        /// <param name="id">Customer ID</param>
         /// <returns></returns>
-        public static tb_KhachHang GetCustomer(string maKH)
+        public static tb_KhachHang GetCustomer(string id)
         {
-            return new KhachHangDAL().GetCustomer(maKH);
+            return new KhachHangDAL().GetCustomer(id);
         }
 
         /// <summary>

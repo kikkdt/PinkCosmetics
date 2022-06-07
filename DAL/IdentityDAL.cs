@@ -6,7 +6,7 @@ namespace DAL
 {
     public class IdentityDAL
     {
-        private PinkCosmeticsDataContext dataContext = new PinkCosmeticsDataContext();
+        private readonly PinkCosmetics _dataContext = new PinkCosmetics();
 
         /// <summary>
         /// Get identity from database
@@ -16,7 +16,7 @@ namespace DAL
         /// <exception cref="Invalid parameter"></exception>
         public int GetIdentity(string parameter)
         {
-            tb_Identity identify = dataContext.tb_Identities.Select(i => i).FirstOrDefault();
+            tb_Identity identify = _dataContext.tb_Identity.Select(i => i).FirstOrDefault();
             switch (parameter)
             {
                 case "NhanVien":

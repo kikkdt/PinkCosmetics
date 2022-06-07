@@ -5,7 +5,7 @@ namespace DAL
 {
     public class GiaBanDAL
     {
-        private PinkCosmeticsDataContext dataContext = new PinkCosmeticsDataContext();
+        private readonly PinkCosmetics _dataContext = new PinkCosmetics();
 
         /// <summary>
         /// Get price of product
@@ -15,7 +15,7 @@ namespace DAL
         /// <returns>The price of product</returns>
         public tb_GiaBan GetPrice(int priceTypeID, string productID)
         {
-            return dataContext.tb_GiaBans.FirstOrDefault(p => p.MaBangGia.Equals(priceTypeID) && p.MaSanPham.Equals(productID));
+            return _dataContext.tb_GiaBan.FirstOrDefault(p => p.MaBangGia == priceTypeID && p.MaSanPham == productID);
         }
     }
 }

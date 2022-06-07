@@ -6,7 +6,7 @@ namespace DAL
 {
     public class NhanVienDAL
     {
-        private PinkCosmeticsDataContext dataContext = new PinkCosmeticsDataContext();
+        private readonly PinkCosmetics _dataContext = new PinkCosmetics();
 
         /// <summary>
         /// Get a list of employees
@@ -14,7 +14,7 @@ namespace DAL
         /// <returns></returns>
         public List<tb_NhanVien> GetEmployees()
         {
-            return dataContext.tb_NhanViens.Where(x => x.DaXoa == false).ToList();
+            return _dataContext.tb_NhanVien.Where(x => x.DaXoa == false).ToList();
         }
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace DAL
         /// <returns>Employee</returns>
         public tb_NhanVien GetEmployee(string id)
         {
-            return dataContext.tb_NhanViens.FirstOrDefault(e => e.MaNV.Equals(id));
+            return _dataContext.tb_NhanVien.FirstOrDefault(e => e.MaNV == id);
         }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace DAL
         /// <returns></returns>
         public tb_NhanVien GetEmployeeByAccount(string username)
         {
-            return dataContext.tb_NhanViens.FirstOrDefault(e => e.Username.Equals(username));
+            return _dataContext.tb_NhanVien.FirstOrDefault(e => e.Username == username);
         }
     }
 }

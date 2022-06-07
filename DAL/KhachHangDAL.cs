@@ -6,7 +6,7 @@ namespace DAL
 {
     public class KhachHangDAL
     {
-        private PinkCosmeticsDataContext dataContext = new PinkCosmeticsDataContext();
+        private readonly PinkCosmetics _dataContext = new PinkCosmetics();
 
         /// <summary>
         /// Get all customers
@@ -14,17 +14,17 @@ namespace DAL
         /// <returns>List of customers</returns>
         public List<tb_KhachHang> GetCustomers()
         {
-            return dataContext.tb_KhachHangs.Where(kh => kh.DaXoa == false).ToList();
+            return _dataContext.tb_KhachHang.Where(customer => customer.DaXoa == false).ToList();
         }
 
         /// <summary>
         /// Get a customer by ID
         /// </summary>
-        /// <param name="maKH">Customer ID</param>
+        /// <param name="id">Customer ID</param>
         /// <returns></returns>
-        public tb_KhachHang GetCustomer(string maKH)
+        public tb_KhachHang GetCustomer(string id)
         {
-            return dataContext.tb_KhachHangs.FirstOrDefault(kh => kh.MaKH.Equals(maKH));
+            return _dataContext.tb_KhachHang.FirstOrDefault(kh => kh.MaKH == id);
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace DAL
                 customerUpdate.DiaChi = customer.DiaChi;
                 customerUpdate.DiemTichLuy = customer.DiemTichLuy;
                 customerUpdate.DaXoa = customer.DaXoa;
-                dataContext.SubmitChanges();
+                _dataContext.SaveChanges();
                 return true;
             }
             catch

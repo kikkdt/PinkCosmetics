@@ -6,7 +6,7 @@ namespace DAL
 {
     public class SanPhamDAL
     {
-        private PinkCosmeticsDataContext dataContext = new PinkCosmeticsDataContext();
+        private readonly PinkCosmetics _dataContext = new PinkCosmetics();
 
         /// <summary>
         /// Get all list of products
@@ -14,7 +14,7 @@ namespace DAL
         /// <returns>List of products</returns>
         public List<tb_SanPham> GetProducts()
         {
-            return dataContext.tb_SanPhams.Where(p => p.DaXoa.Equals(false)).ToList();
+            return _dataContext.tb_SanPham.Where(p => p.DaXoa == false).ToList();
         }
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace DAL
         /// <returns></returns>
         public tb_SanPham GetProduct(string id)
         {
-            return dataContext.tb_SanPhams.FirstOrDefault(p => p.MaSanPham.Equals(id));
+            return _dataContext.tb_SanPham.FirstOrDefault(p => p.MaSanPham == id);
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace DAL
                 productUpdate.UrlHinh = product.UrlHinh;
                 productUpdate.MoTa = product.MoTa;
                 productUpdate.DaXoa = product.DaXoa;
-                dataContext.SubmitChanges();
+                _dataContext.SaveChanges();
                 return true;
             }
             catch

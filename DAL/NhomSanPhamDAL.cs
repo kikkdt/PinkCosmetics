@@ -6,7 +6,7 @@ namespace DAL
 {
     public class NhomSanPhamDAL
     {
-        private PinkCosmeticsDataContext dataContext = new PinkCosmeticsDataContext();
+        private readonly PinkCosmetics _dataContext = new PinkCosmetics();
 
         /// <summary>
         /// Get all product groups
@@ -14,7 +14,7 @@ namespace DAL
         /// <returns>List of product groups</returns>
         public List<tb_NhomSanPham> GetProductGroups()
         {
-            return dataContext.tb_NhomSanPhams.Where(x => x.DaXoa == false).ToList();
+            return _dataContext.tb_NhomSanPham.Where(x => x.DaXoa == false).ToList();
         }
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace DAL
         /// <returns>Product groups</returns>
         public tb_NhomSanPham GetProductGroups(int id)
         {
-            return dataContext.tb_NhomSanPhams.FirstOrDefault(x => x.MaNSP == id);
+            return _dataContext.tb_NhomSanPham.FirstOrDefault(x => x.MaNSP == id);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace GUI
             if (importInvoice != null)
             {
                 ImportInvoice = importInvoice;
-                ImportInvoiceDetails = importInvoice.tb_ChiTietHDNhaps.ToList();
+                ImportInvoiceDetails = importInvoice.tb_ChiTietHDNhap.ToList();
             }
             else
             {
@@ -37,7 +37,7 @@ namespace GUI
                     NgayLap = DateTime.Now
                 };
 
-                foreach (var orderDetail in Order.tb_ChiTietPhieuDats)
+                foreach (var orderDetail in Order.tb_ChiTietPhieuDat)
                 {
                     tb_ChiTietHDNhap importInvoiceDetail = new tb_ChiTietHDNhap
                     {
@@ -60,7 +60,7 @@ namespace GUI
         {
             List<tb_SanPham> products = SanPhamBLL.GetProducts();
             var orderDetailAndProducts
-                = Order.tb_ChiTietPhieuDats.Join(products, orderDetail => orderDetail.MaSanPham, product => product.MaSanPham, (orderDetail, product) => new { orderDetail, product }).Join(new List<tb_HoaDonNhap> { ImportInvoice }, orderDetailAndProduct => orderDetailAndProduct.orderDetail.MaPhieuDat, importInvoice => importInvoice.MaPhieuDat, (orderDetailAndProduct, importInvoice) => new { orderDetailAndProduct, importInvoice });
+                = Order.tb_ChiTietPhieuDat.Join(products, orderDetail => orderDetail.MaSanPham, product => product.MaSanPham, (orderDetail, product) => new { orderDetail, product }).Join(new List<tb_HoaDonNhap> { ImportInvoice }, orderDetailAndProduct => orderDetailAndProduct.orderDetail.MaPhieuDat, importInvoice => importInvoice.MaPhieuDat, (orderDetailAndProduct, importInvoice) => new { orderDetailAndProduct, importInvoice });
 
             var importInvoiceDetailAndProducts = ImportInvoiceDetails.Join(products,
                 importInvoiceDetail => importInvoiceDetail.MaSanPham, product => product.MaSanPham,
@@ -139,7 +139,7 @@ namespace GUI
         {
             foreach (var importInvoiceDetail in ImportInvoiceDetails)
             {
-                int orderQuantity = Order.tb_ChiTietPhieuDats
+                int orderQuantity = Order.tb_ChiTietPhieuDat
                     .FirstOrDefault(x => x.MaSanPham.Equals(importInvoiceDetail.MaSanPham)).SoLuong;
                 if (importInvoiceDetail.SoLuong > orderQuantity)
                 {
