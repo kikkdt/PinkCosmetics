@@ -1,5 +1,7 @@
 ﻿using BLL;
+using DevExpress.XtraReports.UI;
 using DTO;
+using GUI.Reports;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -57,6 +59,10 @@ namespace GUI
                     {
                         IsSuccess = true;
                         Close();
+                        // Export invoice
+                        ReportInvoice reportInvoice = new ReportInvoice();
+                        reportInvoice.Parameters["mahdban"].Value = SalesInvoice.MaHDBan;
+                        reportInvoice.ShowPreview();
                     }
                 }
                 catch (Exception ex)

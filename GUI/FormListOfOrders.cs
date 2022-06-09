@@ -3,7 +3,12 @@ using DevExpress.XtraEditors.Controls;
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Windows.Forms;
+using DevExpress.XtraPrinting;
+using GUI.Reports;
 
 namespace GUI
 {
@@ -75,13 +80,40 @@ namespace GUI
         private void RepositoryItemButtonEdit1_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
             EditorButton button = e.Button;
+            int indexRowSelected = gridView1.GetSelectedRows()[0];
             switch (button.Caption)
             {
                 case "Xuất file Excel":
+                    // Create a report
+                    string id = gridView1.GetRowCellValue(indexRowSelected, "MaPhieuDat").ToString();
+                    ReportOrder reportOrder = new ReportOrder()
+                    {
+                        Name = "Thong tin dat hang " + id
+                    };
+                    reportOrder.Parameters["MaPhieuDat"].Value = id;
+                    // Specify export options
+                    XlsxExportOptions xlsxExportOptions = new XlsxExportOptions()
+                    {
+                        ExportMode = XlsxExportMode.SingleFile,
+                    };
+
+                    using (var folderBrowserDialog = new FolderBrowserDialog())
+                    {
+                        DialogResult result = folderBrowserDialog.ShowDialog();
+
+                        if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(folderBrowserDialog.SelectedPath))
+                        {
+                            string path = $"{folderBrowserDialog.SelectedPath}\\{reportOrder.Name}.xlsx";
+                            // Export the report
+                            reportOrder.ExportToXlsx(path, xlsxExportOptions);
+
+                            // Open file after export
+                            System.Diagnostics.Process.Start(path);
+                        }
+                    }
                     break;
 
                 case "Nhập hàng":
-                    int indexRowSelected = gridView1.GetSelectedRows()[0];
                     string orderID = gridView1.GetRowCellValue(indexRowSelected, "MaPhieuDat").ToString();
                     FormImportGoods formImportGoods = new FormImportGoods(PhieuDatHangBLL.GetOrder(orderID));
                     formImportGoods.FormClosed += (o, evt) =>
