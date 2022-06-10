@@ -2,6 +2,7 @@
 using DevExpress.XtraReports.UI;
 using DTO;
 using GUI.Reports;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -51,6 +52,31 @@ namespace GUI
         /// <param name="e"></param>
         private void BtnPayout_Click(object sender, EventArgs e)
         {
+            int indexPaymentMethod = radioGroupPaymentMethod.SelectedIndex;
+            if (indexPaymentMethod == -1)
+            {
+                MessageBox.Show("Chọn phương thức thanh toán", "Có lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                switch (radioGroupPaymentMethod.Properties.Items[radioGroupPaymentMethod.SelectedIndex].Value.ToString())
+                {
+                    case "Cash":
+                        PayWithCash();
+                        break;
+
+                    case "MoMo":
+                        PayWithMoMo();
+                        break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Payment in cash
+        /// </summary>
+        private void PayWithCash()
+        {
             if (IsValidForm())
             {
                 try
@@ -73,6 +99,81 @@ namespace GUI
             else
             {
                 MessageBox.Show("Tiền khách đưa không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Payment by e-wallet MoMo
+        /// </summary>
+        private void PayWithMoMo()
+        {
+            // Request MoMo
+            if (btnPayout.Text != "Kiểm tra giao dịch")
+            {
+                btnPayout.Text = "Kiểm tra giao dịch";
+
+                RequestMoMo();
+            }
+            else // Query transaction result
+            {
+                resultMoMo = ResultMoMoBLL
+                    .GetResultMoMo(resultMoMo.OrderID);
+                if (resultMoMo.ResultCode == 0)
+                {
+                    try
+                    {
+                        if (HoaDonBanBLL.Insert(SalesInvoice, SalesInvoiceDetails))
+                        {
+                            IsSuccess = true;
+                            Close();
+                            // Export invoice
+                            ReportInvoice reportInvoice = new ReportInvoice();
+                            reportInvoice.Parameters["mahdban"].Value = SalesInvoice.MaHDBan;
+                            reportInvoice.ShowPreview();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Có lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"Thanh toán thất bại, vui lòng thử lại. [Mã lỗi: {resultMoMo.ResultCode}]", "Có lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Close();
+                }
+            }
+        }
+
+        private JObject jResponeFromMomo;
+        private tb_ResultMoMo resultMoMo;
+
+        /// <summary>
+        /// Initialize a payment MoMo request
+        /// </summary>
+        private void RequestMoMo()
+        {
+            string orderInfo = $"Thanh toan hoa don {SalesInvoice.MaHDBan} tai Pink Cosmetics";
+            string amount = SalesInvoice.ThanhTien.ToString();
+            string orderId = Guid.NewGuid().ToString();
+            string requestId = Guid.NewGuid().ToString();
+            string extraData = "";
+            JObject message = MoMoRequest.CreatePostJsonString(orderInfo, amount, orderId, requestId, extraData);
+
+            string responseFromMomo = MoMoRequest.SendPaymentRequest(message.ToString());
+
+            jResponeFromMomo = JObject.Parse(responseFromMomo);
+
+            // Insert transaction reference to the database
+            resultMoMo = new tb_ResultMoMo()
+            {
+                OrderID = orderId
+            };
+
+            if (ResultMoMoBLL.Insert(resultMoMo) > 0)
+            {
+                // Open in browser
+                System.Diagnostics.Process.Start(jResponeFromMomo.GetValue("payUrl").ToString());
             }
         }
 

@@ -44,9 +44,11 @@
             this.spinMoneyGiven = new DevExpress.XtraEditors.SpinEdit();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPayout = new DevExpress.XtraEditors.SimpleButton();
+            this.radioGroupPaymentMethod = new DevExpress.XtraEditors.RadioGroup();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinMoneyGiven.Properties)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupPaymentMethod.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -66,21 +68,22 @@
             this.tableLayoutPanel1.Controls.Add(this.lblNeedToPay, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblExcessCash, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.spinMoneyGiven, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.radioGroupPaymentMethod, 0, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
-            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(598, 510);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(598, 610);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // linkLoyalty
@@ -219,10 +222,10 @@
             this.tableLayoutPanel1.SetColumnSpan(this.panel1, 2);
             this.panel1.Controls.Add(this.btnPayout);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(13, 437);
+            this.panel1.Location = new System.Drawing.Point(13, 527);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(572, 60);
-            this.panel1.TabIndex = 15;
+            this.panel1.Size = new System.Drawing.Size(572, 70);
+            this.panel1.TabIndex = 16;
             // 
             // btnPayout
             // 
@@ -239,17 +242,35 @@
             this.btnPayout.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPayout.ImageOptions.SvgImage")));
             this.btnPayout.Location = new System.Drawing.Point(0, 0);
             this.btnPayout.Name = "btnPayout";
-            this.btnPayout.Size = new System.Drawing.Size(572, 60);
-            this.btnPayout.TabIndex = 16;
+            this.btnPayout.Size = new System.Drawing.Size(572, 70);
+            this.btnPayout.TabIndex = 18;
             this.btnPayout.Text = "THANH TOÁN";
             this.btnPayout.Click += new System.EventHandler(this.BtnPayout_Click);
+            // 
+            // radioGroupPaymentMethod
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.radioGroupPaymentMethod, 2);
+            this.radioGroupPaymentMethod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioGroupPaymentMethod.Location = new System.Drawing.Point(13, 373);
+            this.radioGroupPaymentMethod.Name = "radioGroupPaymentMethod";
+            this.radioGroupPaymentMethod.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.radioGroupPaymentMethod.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioGroupPaymentMethod.Properties.Appearance.Options.UseBackColor = true;
+            this.radioGroupPaymentMethod.Properties.Appearance.Options.UseFont = true;
+            this.radioGroupPaymentMethod.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.radioGroupPaymentMethod.Properties.Columns = 2;
+            this.radioGroupPaymentMethod.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("Cash", "Cash"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("MoMo", "MoMo e-wallet")});
+            this.radioGroupPaymentMethod.Size = new System.Drawing.Size(572, 94);
+            this.radioGroupPaymentMethod.TabIndex = 17;
             // 
             // FormPayment
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 510);
+            this.ClientSize = new System.Drawing.Size(598, 610);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -264,6 +285,7 @@
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinMoneyGiven.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupPaymentMethod.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -285,5 +307,6 @@
         private DevExpress.XtraEditors.SpinEdit spinMoneyGiven;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.SimpleButton btnPayout;
+        private DevExpress.XtraEditors.RadioGroup radioGroupPaymentMethod;
     }
 }

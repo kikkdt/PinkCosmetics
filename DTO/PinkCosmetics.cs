@@ -1,12 +1,11 @@
 using System.Data.Entity;
 using SqlProviderServices = System.Data.Entity.SqlServer.SqlProviderServices;
-
 namespace DTO
 {
     public partial class PinkCosmetics : DbContext
     {
         public PinkCosmetics()
-            : base("name=PinkCosmetics")
+            : base("data source = kikkdt-g14; initial catalog = dbPinkCosmetics; user id = sa; password=123;MultipleActiveResultSets=True;App=EntityFramework")
         {
         }
 
@@ -21,6 +20,7 @@ namespace DTO
         public virtual DbSet<tb_NhanVien> tb_NhanVien { get; set; }
         public virtual DbSet<tb_NhomSanPham> tb_NhomSanPham { get; set; }
         public virtual DbSet<tb_PhieuDatHang> tb_PhieuDatHang { get; set; }
+        public virtual DbSet<tb_ResultMoMo> tb_ResultMoMo { get; set; }
         public virtual DbSet<tb_SanPham> tb_SanPham { get; set; }
         public virtual DbSet<tb_TaiKhoan> tb_TaiKhoan { get; set; }
         public virtual DbSet<tb_ThuongHieu> tb_ThuongHieu { get; set; }
@@ -187,6 +187,10 @@ namespace DTO
                 .HasMany(e => e.tb_ChiTietPhieuDat)
                 .WithRequired(e => e.tb_PhieuDatHang)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<tb_ResultMoMo>()
+                .Property(e => e.OrderID)
+                .IsUnicode(false);
 
             modelBuilder.Entity<tb_SanPham>()
                 .Property(e => e.MaSanPham)

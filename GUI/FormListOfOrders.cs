@@ -1,14 +1,12 @@
 ﻿using BLL;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraPrinting;
 using DTO;
+using GUI.Reports;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using DevExpress.XtraPrinting;
-using GUI.Reports;
 
 namespace GUI
 {
