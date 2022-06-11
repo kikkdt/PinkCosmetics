@@ -43,10 +43,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PinkCosmetics.cs" />
@@ -60,6 +56,7 @@
     <Compile Include="tb_ChiTietHDBan.cs" />
     <Compile Include="tb_ChiTietHDNhap.cs" />
     <Compile Include="tb_ChiTietPhieuDat.cs" />
+    <Compile Include="tb_ChucNang.cs" />
     <Compile Include="tb_GiaBan.cs" />
     <Compile Include="tb_HoaDonBan.cs" />
     <Compile Include="tb_HoaDonNhap.cs" />
@@ -67,6 +64,7 @@
     <Compile Include="tb_KhachHang.cs" />
     <Compile Include="tb_NhanVien.cs" />
     <Compile Include="tb_NhomSanPham.cs" />
+    <Compile Include="tb_PhanQuyen.cs" />
     <Compile Include="tb_PhieuDatHang.cs" />
     <Compile Include="tb_ResultMoMo.cs" />
     <Compile Include="tb_SanPham.cs" />

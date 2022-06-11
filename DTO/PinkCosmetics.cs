@@ -13,6 +13,7 @@ namespace DTO
         public virtual DbSet<tb_ChiTietHDBan> tb_ChiTietHDBan { get; set; }
         public virtual DbSet<tb_ChiTietHDNhap> tb_ChiTietHDNhap { get; set; }
         public virtual DbSet<tb_ChiTietPhieuDat> tb_ChiTietPhieuDat { get; set; }
+        public virtual DbSet<tb_ChucNang> tb_ChucNang { get; set; }
         public virtual DbSet<tb_GiaBan> tb_GiaBan { get; set; }
         public virtual DbSet<tb_HoaDonBan> tb_HoaDonBan { get; set; }
         public virtual DbSet<tb_HoaDonNhap> tb_HoaDonNhap { get; set; }
@@ -25,6 +26,7 @@ namespace DTO
         public virtual DbSet<tb_TaiKhoan> tb_TaiKhoan { get; set; }
         public virtual DbSet<tb_ThuongHieu> tb_ThuongHieu { get; set; }
         public virtual DbSet<tb_Identity> tb_Identity { get; set; }
+        public virtual DbSet<tb_PhanQuyen> tb_PhanQuyen { get; set; }
         public virtual DbSet<ViewChiTietNhapHang> ViewChiTietNhapHang { get; set; }
         public virtual DbSet<ViewChiTietPhieuDatHang> ViewChiTietPhieuDatHang { get; set; }
         public virtual DbSet<ViewPhieuDatHang> ViewPhieuDatHang { get; set; }
@@ -80,6 +82,28 @@ namespace DTO
             modelBuilder.Entity<tb_ChiTietPhieuDat>()
                 .Property(e => e.MaSanPham)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<tb_ChucNang>()
+                .Property(e => e.MaChucNang)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<tb_ChucNang>()
+                .Property(e => e.TenChucNang)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<tb_ChucNang>()
+                .Property(e => e.ChucNangCha)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<tb_ChucNang>()
+                .HasMany(e => e.tb_ChucNang1)
+                .WithOptional(e => e.tb_ChucNang2)
+                .HasForeignKey(e => e.ChucNangCha);
+
+            modelBuilder.Entity<tb_ChucNang>()
+                .HasMany(e => e.tb_PhanQuyen)
+                .WithRequired(e => e.tb_ChucNang)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<tb_GiaBan>()
                 .Property(e => e.MaSanPham)
@@ -240,6 +264,19 @@ namespace DTO
                 .HasMany(e => e.tb_NhanVien)
                 .WithRequired(e => e.tb_TaiKhoan)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<tb_TaiKhoan>()
+                .HasMany(e => e.tb_PhanQuyen)
+                .WithRequired(e => e.tb_TaiKhoan)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<tb_PhanQuyen>()
+                .Property(e => e.Username)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<tb_PhanQuyen>()
+                .Property(e => e.MaChucNang)
+                .IsUnicode(false);
 
             modelBuilder.Entity<ViewChiTietNhapHang>()
                 .Property(e => e.MaSanPham)

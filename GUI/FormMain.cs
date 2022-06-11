@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DevExpress.XtraBars;
 using DTO;
 using System;
 using System.Linq;
@@ -16,6 +17,93 @@ namespace GUI
             InitializeComponent();
             Account = account;
             Employee = NhanVienBLL.GetEmployeeByAccount(account.Username);
+
+            GrantPermission();
+        }
+
+        /// <summary>
+        /// Grant permission
+        /// </summary>
+        private void GrantPermission()
+        {
+            var permissions = PhanQuyenBLL.GetPermission(Account.Username);
+            foreach (var permission in permissions)
+            {
+                switch (permission.MaChucNang)
+                {
+                    case "btnAddBrand":
+                        btnAddBrand.Visibility = (bool)permission.CoQuyen ? BarItemVisibility.Always : BarItemVisibility.Never;
+                        break;
+
+                    case "btnAddGroupOfGoods":
+                        btnAddGroupOfGoods.Visibility = (bool)permission.CoQuyen ? BarItemVisibility.Always : BarItemVisibility.Never;
+                        break;
+
+                    case "btnBrand":
+                        btnBrand.Visibility = (bool)permission.CoQuyen ? BarItemVisibility.Always : BarItemVisibility.Never;
+                        break;
+
+                    case "btnChangePassword":
+                        btnChangePassword.Visibility = (bool)permission.CoQuyen ? BarItemVisibility.Always : BarItemVisibility.Never;
+                        break;
+
+                    case "btnGoods":
+                        btnGoods.Visibility = (bool)permission.CoQuyen ? BarItemVisibility.Always : BarItemVisibility.Never;
+                        break;
+
+                    case "btnGroupOfGoods":
+                        btnGroupOfGoods.Visibility = (bool)permission.CoQuyen ? BarItemVisibility.Always : BarItemVisibility.Never;
+                        break;
+
+                    case "btnInventory":
+                        btnInventory.Visibility = (bool)permission.CoQuyen ? BarItemVisibility.Always : BarItemVisibility.Never;
+                        break;
+
+                    case "btnInvoiceHistory":
+                        btnInvoiceHistory.Visibility = (bool)permission.CoQuyen ? BarItemVisibility.Always : BarItemVisibility.Never;
+                        break;
+
+                    case "btnListOfOrders":
+                        btnListOfOrders.Visibility = (bool)permission.CoQuyen ? BarItemVisibility.Always : BarItemVisibility.Never;
+                        break;
+
+                    case "btnLogOut":
+                        btnLogOut.Visibility = (bool)permission.CoQuyen ? BarItemVisibility.Always : BarItemVisibility.Never;
+                        break;
+
+                    case "btnOrder":
+                        btnOrder.Visibility = (bool)permission.CoQuyen ? BarItemVisibility.Always : BarItemVisibility.Never;
+                        break;
+
+                    case "btnPermission":
+                        btnPermission.Visibility = (bool)permission.CoQuyen ? BarItemVisibility.Always : BarItemVisibility.Never;
+                        break;
+
+                    case "btnPOS":
+                        btnPOS.Visibility = (bool)permission.CoQuyen ? BarItemVisibility.Always : BarItemVisibility.Never;
+                        break;
+
+                    case "btnPriceSetting":
+                        btnPriceSetting.Visibility = (bool)permission.CoQuyen ? BarItemVisibility.Always : BarItemVisibility.Never;
+                        break;
+
+                    case "ribbonAccount":
+                        ribbonAccount.Visible = (bool)permission.CoQuyen;
+                        break;
+
+                    case "ribbonGoods":
+                        ribbonGoods.Visible = (bool)permission.CoQuyen;
+                        break;
+
+                    case "ribbonSystem":
+                        ribbonSystem.Visible = (bool)permission.CoQuyen;
+                        break;
+
+                    case "ribbonTransaction":
+                        ribbonTransaction.Visible = (bool)permission.CoQuyen;
+                        break;
+                }
+            }
         }
 
         /// <summary>
@@ -66,6 +154,29 @@ namespace GUI
         {
             FormListOfOrders formListOfOrders = new FormListOfOrders();
             OpenChildForm(formListOfOrders, "Danh sách đặt hàng");
+        }
+
+        private void BtnLogOut_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Hide();
+            Program.FormLogin.FormClosed += (o, evt) =>
+            {
+                Program.FormLogin = new FormLogin();
+                Program.FormLogin.ShowDialog();
+            };
+            Close();
+        }
+
+        private void BtnPermission_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormGrantPermission formGrantPermission = new FormGrantPermission();
+            OpenChildForm(formGrantPermission, "Phân quyền");
+        }
+
+        private void BtnChangePassword_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormChangePassword formChangePassword = new FormChangePassword();
+            formChangePassword.ShowDialog();
         }
     }
 }

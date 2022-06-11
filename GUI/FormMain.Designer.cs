@@ -43,17 +43,19 @@
             this.btnImportGoods = new DevExpress.XtraBars.BarButtonItem();
             this.btnChangePassword = new DevExpress.XtraBars.BarButtonItem();
             this.btnLogOut = new DevExpress.XtraBars.BarButtonItem();
+            this.btnInvoiceHistory = new DevExpress.XtraBars.BarButtonItem();
             this.btnOrder = new DevExpress.XtraBars.BarButtonItem();
             this.btnListOfOrders = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonSell = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonSellGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnPermission = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonTransaction = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.groupSell = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.groupOrderAndImport = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonGoods = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonGoodsGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonGroupOfGoods = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonBrandGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonTransaction = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonSystem = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.groupPermission = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonAccount = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -81,15 +83,17 @@
             this.btnImportGoods,
             this.btnChangePassword,
             this.btnLogOut,
+            this.btnInvoiceHistory,
             this.btnOrder,
-            this.btnListOfOrders});
+            this.btnListOfOrders,
+            this.btnPermission});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 26;
+            this.ribbonControl1.MaxItemId = 30;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonSell,
-            this.ribbonGoods,
             this.ribbonTransaction,
+            this.ribbonGoods,
+            this.ribbonSystem,
             this.ribbonAccount});
             this.ribbonControl1.Size = new System.Drawing.Size(1262, 183);
             // 
@@ -180,6 +184,7 @@
             this.btnChangePassword.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnChangePassword.ImageOptions.SvgImage")));
             this.btnChangePassword.LargeWidth = 100;
             this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnChangePassword_ItemClick);
             // 
             // btnLogOut
             // 
@@ -188,11 +193,20 @@
             this.btnLogOut.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLogOut.ImageOptions.SvgImage")));
             this.btnLogOut.LargeWidth = 100;
             this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnLogOut_ItemClick);
+            // 
+            // btnInvoiceHistory
+            // 
+            this.btnInvoiceHistory.Caption = "Lịch sử hoá đơn";
+            this.btnInvoiceHistory.Id = 26;
+            this.btnInvoiceHistory.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnInvoiceHistory.ImageOptions.SvgImage")));
+            this.btnInvoiceHistory.LargeWidth = 100;
+            this.btnInvoiceHistory.Name = "btnInvoiceHistory";
             // 
             // btnOrder
             // 
             this.btnOrder.Caption = "Tạo phiếu đặt hàng";
-            this.btnOrder.Id = 24;
+            this.btnOrder.Id = 27;
             this.btnOrder.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnOrder.ImageOptions.SvgImage")));
             this.btnOrder.LargeWidth = 100;
             this.btnOrder.Name = "btnOrder";
@@ -201,24 +215,43 @@
             // btnListOfOrders
             // 
             this.btnListOfOrders.Caption = "Danh sách đặt hàng";
-            this.btnListOfOrders.Id = 25;
+            this.btnListOfOrders.Id = 28;
             this.btnListOfOrders.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnListOfOrders.ImageOptions.SvgImage")));
             this.btnListOfOrders.LargeWidth = 100;
             this.btnListOfOrders.Name = "btnListOfOrders";
             this.btnListOfOrders.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListOfOrders_ItemClick);
             // 
-            // ribbonSell
+            // btnPermission
             // 
-            this.ribbonSell.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonSellGroup});
-            this.ribbonSell.Name = "ribbonSell";
-            this.ribbonSell.Text = "Bán hàng";
+            this.btnPermission.Caption = "Phân quyền";
+            this.btnPermission.Id = 29;
+            this.btnPermission.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPermission.ImageOptions.SvgImage")));
+            this.btnPermission.LargeWidth = 100;
+            this.btnPermission.Name = "btnPermission";
+            this.btnPermission.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPermission_ItemClick);
             // 
-            // ribbonSellGroup
+            // ribbonTransaction
             // 
-            this.ribbonSellGroup.AllowTextClipping = false;
-            this.ribbonSellGroup.ItemLinks.Add(this.btnPOS);
-            this.ribbonSellGroup.Name = "ribbonSellGroup";
+            this.ribbonTransaction.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.groupSell,
+            this.groupOrderAndImport});
+            this.ribbonTransaction.Name = "ribbonTransaction";
+            this.ribbonTransaction.Text = "Giao dịch";
+            // 
+            // groupSell
+            // 
+            this.groupSell.AllowTextClipping = false;
+            this.groupSell.ItemLinks.Add(this.btnPOS);
+            this.groupSell.ItemLinks.Add(this.btnInvoiceHistory);
+            this.groupSell.Name = "groupSell";
+            this.groupSell.Text = "Bán hàng";
+            // 
+            // groupOrderAndImport
+            // 
+            this.groupOrderAndImport.ItemLinks.Add(this.btnOrder);
+            this.groupOrderAndImport.ItemLinks.Add(this.btnListOfOrders);
+            this.groupOrderAndImport.Name = "groupOrderAndImport";
+            this.groupOrderAndImport.Text = "Đặt && Nhận hàng";
             // 
             // ribbonGoods
             // 
@@ -252,25 +285,18 @@
             this.ribbonBrandGroup.Name = "ribbonBrandGroup";
             this.ribbonBrandGroup.Text = "Thương hiệu";
             // 
-            // ribbonTransaction
+            // ribbonSystem
             // 
-            this.ribbonTransaction.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup5});
-            this.ribbonTransaction.Name = "ribbonTransaction";
-            this.ribbonTransaction.Text = "Giao dịch";
+            this.ribbonSystem.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.groupPermission});
+            this.ribbonSystem.Name = "ribbonSystem";
+            this.ribbonSystem.Text = "Hệ thống";
             // 
-            // ribbonPageGroup1
+            // groupPermission
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnInvoice);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnOrder);
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnListOfOrders);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Đặt && Nhập hàng";
+            this.groupPermission.ItemLinks.Add(this.btnPermission);
+            this.groupPermission.Name = "groupPermission";
+            this.groupPermission.Text = "Phân quyền";
             // 
             // ribbonAccount
             // 
@@ -321,8 +347,8 @@
         #endregion
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonSell;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonSellGroup;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonTransaction;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupSell;
         public DevExpress.XtraBars.BarButtonItem btnPOS;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonGoods;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonGoodsGroup;
@@ -336,8 +362,6 @@
         private DevExpress.XtraBars.BarButtonItem btnAddBrand;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonBrandGroup;
         private DevExpress.XtraBars.BarButtonItem btnInvoice;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonTransaction;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem btnImportGoods;
         private DevExpress.XtraBars.BarButtonItem btnChangePassword;
         private DevExpress.XtraBars.BarButtonItem btnLogOut;
@@ -345,8 +369,12 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraBars.BarButtonItem btnInvoiceHistory;
         private DevExpress.XtraBars.BarButtonItem btnOrder;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupOrderAndImport;
         public DevExpress.XtraBars.BarButtonItem btnListOfOrders;
+        private DevExpress.XtraBars.BarButtonItem btnPermission;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonSystem;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupPermission;
     }
 }
