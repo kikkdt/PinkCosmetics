@@ -101,20 +101,20 @@ namespace GUI
                     if (MessageBox.Show("Bạn có chắc muốn reset mật khẩu về mặc định?", "Xác nhận reset",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        try
+                    try
+                    {
+                        if (TaiKhoanBLL.ResetPassword(username) > 0)
                         {
-                            if (TaiKhoanBLL.ResetPassword(username) > 0)
-                            {
-                                MessageBox.Show($"Reset mật khẩu tài khoản {username} về mặc định thành công", "Thông báo",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                LoadDgvUser();
-                            }
+                            MessageBox.Show($"Reset mật khẩu tài khoản {username} về mặc định thành công", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadDgvUser();
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "Có lỗi xảy ra",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Có lỗi xảy ra",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                     }
                     break;
 
@@ -122,20 +122,20 @@ namespace GUI
                     if (MessageBox.Show("Bạn có chắc muốn xoá tài khoản này?", "Xác nhận xoá",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        try
+                    try
+                    {
+                        if (TaiKhoanBLL.Delete(username) > 0)
                         {
-                            if (TaiKhoanBLL.Delete(username) > 0)
-                            {
-                                MessageBox.Show($"Xoá tài khoản {username} thành công", "Thông báo",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                LoadDgvUser();
-                            }
+                            MessageBox.Show($"Xoá tài khoản {username} thành công", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadDgvUser();
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "Có lỗi xảy ra",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Có lỗi xảy ra",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                     }
                     break;
             }
