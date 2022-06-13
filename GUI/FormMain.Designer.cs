@@ -138,6 +138,7 @@
             this.btnGroupOfGoods.Id = 12;
             this.btnGroupOfGoods.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGroupOfGoods.ImageOptions.SvgImage")));
             this.btnGroupOfGoods.Name = "btnGroupOfGoods";
+            this.btnGroupOfGoods.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnGroupOfGoods_ItemClick);
             // 
             // btnAddGroupOfGoods
             // 
@@ -145,6 +146,7 @@
             this.btnAddGroupOfGoods.Id = 13;
             this.btnAddGroupOfGoods.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddGroupOfGoods.ImageOptions.SvgImage")));
             this.btnAddGroupOfGoods.Name = "btnAddGroupOfGoods";
+            this.btnAddGroupOfGoods.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddGroupOfGoods_ItemClick);
             // 
             // btnBrand
             // 

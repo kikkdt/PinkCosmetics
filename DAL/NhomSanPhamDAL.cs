@@ -26,5 +26,30 @@ namespace DAL
         {
             return _dataContext.tb_NhomSanPham.FirstOrDefault(x => x.MaNSP == id);
         }
+
+        /// <summary>
+        /// Insert into database
+        /// </summary>
+        /// <param name="productGroup"></param>
+        /// <returns></returns>
+        public int Insert(tb_NhomSanPham productGroup)
+        {
+            _dataContext.tb_NhomSanPham.Add(productGroup);
+            return _dataContext.SaveChanges();
+        }
+
+        /// <summary>
+        /// Update in database
+        /// </summary>
+        /// <param name="productGroup"></param>
+        /// <returns></returns>
+        public int Update(tb_NhomSanPham productGroup)
+        {
+            var productGroupUpdate = GetProductGroups(productGroup.MaNSP);
+            productGroupUpdate.TenNSP = productGroup.TenNSP;
+            productGroupUpdate.NSPCha = productGroup.NSPCha;
+            productGroupUpdate.DaXoa = productGroup.DaXoa;
+            return _dataContext.SaveChanges();
+        }
     }
 }

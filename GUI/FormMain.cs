@@ -184,5 +184,17 @@ namespace GUI
             FormListOfInvoices formListOfInvoices = new FormListOfInvoices();
             OpenChildForm(formListOfInvoices, "Lịch sử hoá đơn");
         }
+
+        private void BtnGroupOfGoods_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormListOfProductGroups formListOfProductGroups = new FormListOfProductGroups();
+            OpenChildForm(formListOfProductGroups, "Nhóm hàng hoá");
+        }
+
+        private void BtnAddGroupOfGoods_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormProductGroups formProductGroups = new FormProductGroups();
+            formProductGroups.ShowDialog();
+        }
     }
 }

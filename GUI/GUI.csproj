@@ -128,6 +128,18 @@
     <Compile Include="FormPayment.Designer.cs">
       <DependentUpon>FormPayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormListOfProductGroups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListOfProductGroups.Designer.cs">
+      <DependentUpon>FormListOfProductGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProductGroups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProductGroups.Designer.cs">
+      <DependentUpon>FormProductGroups.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\ReportInvoiceDuplicate.cs">
@@ -213,6 +225,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPayment.resx">
       <DependentUpon>FormPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListOfProductGroups.resx">
+      <DependentUpon>FormListOfProductGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProductGroups.resx">
+      <DependentUpon>FormProductGroups.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -60,6 +60,7 @@ namespace GUI
                 case "TrangThai":
                     e.DisplayText = (bool)e.Value ? "Đã hoàn thành" : "Chưa hoàn thành";
                     break;
+
                 case "NgayLap":
                     e.DisplayText = DateTime.Parse(e.Value.ToString()).ToString("dd/MM/yyyy HH:mm:ss");
                     break;
