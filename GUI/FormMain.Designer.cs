@@ -202,6 +202,7 @@
             this.btnInvoiceHistory.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnInvoiceHistory.ImageOptions.SvgImage")));
             this.btnInvoiceHistory.LargeWidth = 100;
             this.btnInvoiceHistory.Name = "btnInvoiceHistory";
+            this.btnInvoiceHistory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInvoiceHistory_ItemClick);
             // 
             // btnOrder
             // 

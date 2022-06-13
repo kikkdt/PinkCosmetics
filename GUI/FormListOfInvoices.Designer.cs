@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class FormListOfOrders
+    partial class FormListOfInvoices
     {
         /// <summary>
         /// Required designer variable.
@@ -29,60 +29,41 @@
         private void InitializeComponent()
         {
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListOfOrders));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListOfInvoices));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MaPhieuDat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MaNV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.HoTen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MaHDBan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HoTenKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HoTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NgayLap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.Action = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.gridControl, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1278, 680);
-            this.tableLayoutPanel1.TabIndex = 1;
-            // 
             // gridControl
             // 
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
-            this.gridControl.Location = new System.Drawing.Point(3, 3);
+            this.gridControl.Location = new System.Drawing.Point(0, 0);
             this.gridControl.MainView = this.gridView1;
             this.gridControl.Name = "gridControl";
             this.gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.repositoryItemTextEdit1});
-            this.gridControl.Size = new System.Drawing.Size(1272, 674);
-            this.gridControl.TabIndex = 0;
+            this.gridControl.Size = new System.Drawing.Size(1278, 680);
+            this.gridControl.TabIndex = 1;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -90,22 +71,21 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.STT,
-            this.MaPhieuDat,
-            this.MaNV,
-            this.HoTen,
+            this.MaHDBan,
+            this.HoTenKhachHang,
+            this.HoTenNhanVien,
+            this.ThanhTien,
             this.NgayLap,
             this.TrangThai,
             this.Action});
             this.gridView1.GridControl = this.gridControl;
             this.gridView1.GroupPanelText = " ";
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsFind.FindNullPrompt = "Nhập để tìm kiếm đơn đặt hàng";
+            this.gridView1.OptionsFind.FindNullPrompt = "Nhập để tìm kiếm hoá đơn";
             this.gridView1.OptionsFind.FindPanelLocation = DevExpress.XtraGrid.Views.Grid.GridFindPanelLocation.GroupPanel;
             this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.RowHeight = 50;
-            this.gridView1.CustomRowCellEdit += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.GridView1_CustomRowCellEdit);
-            this.gridView1.CustomRowCellEditForEditing += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.GridView1_CustomRowCellEditForEditing);
-            this.gridView1.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.GridView1_CustomColumnDisplayText);
+            this.gridView1.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.GridView_CustomColumnDisplayText);
             // 
             // STT
             // 
@@ -123,48 +103,66 @@
             this.STT.VisibleIndex = 0;
             this.STT.Width = 130;
             // 
-            // MaPhieuDat
+            // MaHDBan
             // 
-            this.MaPhieuDat.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaPhieuDat.AppearanceCell.Options.UseFont = true;
-            this.MaPhieuDat.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaPhieuDat.AppearanceHeader.Options.UseFont = true;
-            this.MaPhieuDat.Caption = "Mã phiếu đặt hàng";
-            this.MaPhieuDat.FieldName = "MaPhieuDat";
-            this.MaPhieuDat.MinWidth = 300;
-            this.MaPhieuDat.Name = "MaPhieuDat";
-            this.MaPhieuDat.OptionsColumn.AllowEdit = false;
-            this.MaPhieuDat.Visible = true;
-            this.MaPhieuDat.VisibleIndex = 1;
-            this.MaPhieuDat.Width = 302;
+            this.MaHDBan.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaHDBan.AppearanceCell.Options.UseFont = true;
+            this.MaHDBan.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaHDBan.AppearanceHeader.Options.UseFont = true;
+            this.MaHDBan.Caption = "Mã hoá đơn";
+            this.MaHDBan.FieldName = "MaHDBan";
+            this.MaHDBan.MaxWidth = 300;
+            this.MaHDBan.MinWidth = 300;
+            this.MaHDBan.Name = "MaHDBan";
+            this.MaHDBan.OptionsColumn.AllowEdit = false;
+            this.MaHDBan.Visible = true;
+            this.MaHDBan.VisibleIndex = 1;
+            this.MaHDBan.Width = 300;
             // 
-            // MaNV
+            // HoTenKhachHang
             // 
-            this.MaNV.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaNV.AppearanceCell.Options.UseFont = true;
-            this.MaNV.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaNV.AppearanceHeader.Options.UseFont = true;
-            this.MaNV.Caption = "Mã nhân viên";
-            this.MaNV.FieldName = "MaNV";
-            this.MaNV.MinWidth = 25;
-            this.MaNV.Name = "MaNV";
-            this.MaNV.OptionsColumn.AllowEdit = false;
-            this.MaNV.Width = 195;
+            this.HoTenKhachHang.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HoTenKhachHang.AppearanceCell.Options.UseFont = true;
+            this.HoTenKhachHang.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HoTenKhachHang.AppearanceHeader.Options.UseFont = true;
+            this.HoTenKhachHang.Caption = "Khách hàng";
+            this.HoTenKhachHang.FieldName = "HoTenKhachHang";
+            this.HoTenKhachHang.MinWidth = 300;
+            this.HoTenKhachHang.Name = "HoTenKhachHang";
+            this.HoTenKhachHang.OptionsColumn.AllowEdit = false;
+            this.HoTenKhachHang.Visible = true;
+            this.HoTenKhachHang.VisibleIndex = 2;
+            this.HoTenKhachHang.Width = 300;
             // 
-            // HoTen
+            // HoTenNhanVien
             // 
-            this.HoTen.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HoTen.AppearanceCell.Options.UseFont = true;
-            this.HoTen.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HoTen.AppearanceHeader.Options.UseFont = true;
-            this.HoTen.Caption = "Người đặt hàng";
-            this.HoTen.FieldName = "HoTen";
-            this.HoTen.MinWidth = 300;
-            this.HoTen.Name = "HoTen";
-            this.HoTen.OptionsColumn.AllowEdit = false;
-            this.HoTen.Visible = true;
-            this.HoTen.VisibleIndex = 2;
-            this.HoTen.Width = 302;
+            this.HoTenNhanVien.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HoTenNhanVien.AppearanceCell.Options.UseFont = true;
+            this.HoTenNhanVien.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HoTenNhanVien.AppearanceHeader.Options.UseFont = true;
+            this.HoTenNhanVien.Caption = "Nhân viên";
+            this.HoTenNhanVien.FieldName = "HoTenNhanVien";
+            this.HoTenNhanVien.MinWidth = 300;
+            this.HoTenNhanVien.Name = "HoTenNhanVien";
+            this.HoTenNhanVien.OptionsColumn.AllowEdit = false;
+            this.HoTenNhanVien.Visible = true;
+            this.HoTenNhanVien.VisibleIndex = 3;
+            this.HoTenNhanVien.Width = 302;
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.ThanhTien.AppearanceCell.Options.UseFont = true;
+            this.ThanhTien.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThanhTien.AppearanceHeader.Options.UseFont = true;
+            this.ThanhTien.Caption = "Thành tiền";
+            this.ThanhTien.FieldName = "ThanhTien";
+            this.ThanhTien.MinWidth = 200;
+            this.ThanhTien.Name = "ThanhTien";
+            this.ThanhTien.OptionsColumn.AllowEdit = false;
+            this.ThanhTien.Visible = true;
+            this.ThanhTien.VisibleIndex = 4;
+            this.ThanhTien.Width = 200;
             // 
             // NgayLap
             // 
@@ -172,13 +170,13 @@
             this.NgayLap.AppearanceCell.Options.UseFont = true;
             this.NgayLap.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NgayLap.AppearanceHeader.Options.UseFont = true;
-            this.NgayLap.Caption = "Ngày đặt hàng";
+            this.NgayLap.Caption = "Ngày tạo";
             this.NgayLap.FieldName = "NgayLap";
             this.NgayLap.MinWidth = 300;
             this.NgayLap.Name = "NgayLap";
             this.NgayLap.OptionsColumn.AllowEdit = false;
             this.NgayLap.Visible = true;
-            this.NgayLap.VisibleIndex = 3;
+            this.NgayLap.VisibleIndex = 5;
             this.NgayLap.Width = 302;
             // 
             // TrangThai
@@ -195,7 +193,7 @@
             this.TrangThai.OptionsColumn.AllowEdit = false;
             this.TrangThai.UnboundDataType = typeof(string);
             this.TrangThai.Visible = true;
-            this.TrangThai.VisibleIndex = 4;
+            this.TrangThai.VisibleIndex = 6;
             this.TrangThai.Width = 200;
             // 
             // repositoryItemTextEdit1
@@ -212,39 +210,36 @@
             this.Action.Caption = "Action";
             this.Action.ColumnEdit = this.repositoryItemButtonEdit1;
             this.Action.FieldName = "Action";
-            this.Action.MinWidth = 100;
+            this.Action.MaxWidth = 200;
+            this.Action.MinWidth = 200;
             this.Action.Name = "Action";
             this.Action.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
             this.Action.Visible = true;
-            this.Action.VisibleIndex = 5;
+            this.Action.VisibleIndex = 7;
             this.Action.Width = 200;
             // 
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
             editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
-            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Xuất file Excel", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "Xuất file Excel", null, null, DevExpress.Utils.ToolTipAnchor.Default),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Nhập hàng", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "Nhập hàng", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Print", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "In lại", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.RepositoryItemButtonEdit1_ButtonClick);
             // 
-            // FormListOfOrders
+            // FormListOfInvoices
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1278, 680);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.gridControl);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.Name = "FormListOfOrders";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Danh sách đặt hàng";
-            this.Load += new System.EventHandler(this.FormListOfOrders_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.Name = "FormListOfInvoices";
+            this.Text = "Lịch sử hoá đơn";
+            this.Load += new System.EventHandler(this.FormListOfInvoices_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
@@ -255,17 +250,17 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraGrid.GridControl gridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
-        private DevExpress.XtraGrid.Columns.GridColumn MaPhieuDat;
-        private DevExpress.XtraGrid.Columns.GridColumn MaNV;
-        private DevExpress.XtraGrid.Columns.GridColumn HoTen;
+        private DevExpress.XtraGrid.Columns.GridColumn MaHDBan;
+        private DevExpress.XtraGrid.Columns.GridColumn HoTenKhachHang;
+        private DevExpress.XtraGrid.Columns.GridColumn HoTenNhanVien;
+        private DevExpress.XtraGrid.Columns.GridColumn ThanhTien;
         private DevExpress.XtraGrid.Columns.GridColumn NgayLap;
-        private DevExpress.XtraGrid.Columns.GridColumn Action;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn TrangThai;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn Action;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
     }
 }

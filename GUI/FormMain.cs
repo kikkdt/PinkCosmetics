@@ -178,5 +178,11 @@ namespace GUI
             FormChangePassword formChangePassword = new FormChangePassword();
             formChangePassword.ShowDialog();
         }
+
+        private void btnInvoiceHistory_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormListOfInvoices formListOfInvoices = new FormListOfInvoices();
+            OpenChildForm(formListOfInvoices, "Lịch sử hoá đơn");
+        }
     }
 }
