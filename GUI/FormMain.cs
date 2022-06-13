@@ -196,5 +196,17 @@ namespace GUI
             FormProductGroups formProductGroups = new FormProductGroups();
             formProductGroups.ShowDialog();
         }
+
+        private void BtnBrand_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormListOfBrands formListOfBrands = new FormListOfBrands();
+            OpenChildForm(formListOfBrands, "Thương hiệu");
+        }
+
+        private void BtnAddBrand_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormBrand formBrand = new FormBrand();
+            formBrand.ShowDialog();
+        }
     }
 }

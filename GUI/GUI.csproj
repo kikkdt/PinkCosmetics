@@ -86,6 +86,12 @@
     <Compile Include="FormListOfOrders.Designer.cs">
       <DependentUpon>FormListOfOrders.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormListOfBrands.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListOfBrands.Designer.cs">
+      <DependentUpon>FormListOfBrands.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,12 @@
     </Compile>
     <Compile Include="FormListOfProductGroups.Designer.cs">
       <DependentUpon>FormListOfProductGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBrand.Designer.cs">
+      <DependentUpon>FormBrand.cs</DependentUpon>
     </Compile>
     <Compile Include="FormProductGroups.cs">
       <SubType>Form</SubType>
@@ -205,6 +217,9 @@
     <EmbeddedResource Include="FormListOfOrders.resx">
       <DependentUpon>FormListOfOrders.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormListOfBrands.resx">
+      <DependentUpon>FormListOfBrands.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormListOfProductGroups.resx">
       <DependentUpon>FormListOfProductGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBrand.resx">
+      <DependentUpon>FormBrand.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProductGroups.resx">
       <DependentUpon>FormProductGroups.cs</DependentUpon>

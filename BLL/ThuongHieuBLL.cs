@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using System;
+using DAL;
 using DTO;
 using System.Collections.Generic;
 
@@ -23,6 +24,48 @@ namespace BLL
         public static tb_ThuongHieu GetBrand(int id)
         {
             return new ThuongHieuDAL().GetBrand(id);
+        }
+
+        /// <summary>
+        /// Insert into database
+        /// </summary>
+        /// <param name="brand"></param>
+        /// <returns></returns>
+        public static int Insert(tb_ThuongHieu brand)
+        {
+            if (string.IsNullOrEmpty(brand.TenThuongHieu))
+            {
+                throw new Exception("Nhập tên thương hiệu");
+            }
+
+            return new ThuongHieuDAL().Insert(brand);
+        }
+
+        /// <summary>
+        /// Update in database
+        /// </summary>
+        /// <param name="brand"></param>
+        /// <returns></returns>
+        public static int Update(tb_ThuongHieu brand)
+        {
+            if (string.IsNullOrEmpty(brand.TenThuongHieu))
+            {
+                throw new Exception("Nhập tên thương hiệu");
+            }
+
+            return new ThuongHieuDAL().Update(brand);
+        }
+
+        /// <summary>
+        /// Delete in database
+        /// </summary>
+        /// <param name="brand"></param>
+        /// <returns></returns>
+        public static int Delete(int id)
+        {
+            var brand = GetBrand(id);
+            brand.DaXoa = true;
+            return new ThuongHieuDAL().Update(brand);
         }
     }
 }

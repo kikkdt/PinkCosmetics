@@ -154,6 +154,7 @@
             this.btnBrand.Id = 14;
             this.btnBrand.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBrand.ImageOptions.SvgImage")));
             this.btnBrand.Name = "btnBrand";
+            this.btnBrand.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnBrand_ItemClick);
             // 
             // btnAddBrand
             // 
@@ -161,6 +162,7 @@
             this.btnAddBrand.Id = 15;
             this.btnAddBrand.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddBrand.ImageOptions.SvgImage")));
             this.btnAddBrand.Name = "btnAddBrand";
+            this.btnAddBrand.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddBrand_ItemClick);
             // 
             // btnInvoice
             // 

@@ -26,5 +26,29 @@ namespace DAL
         {
             return _dataContext.tb_ThuongHieu.FirstOrDefault(x => x.MaThuongHieu == id);
         }
+
+        /// <summary>
+        /// Insert into database
+        /// </summary>
+        /// <param name="brand"></param>
+        /// <returns></returns>
+        public int Insert(tb_ThuongHieu brand)
+        {
+            _dataContext.tb_ThuongHieu.Add(brand);
+            return _dataContext.SaveChanges();
+        }
+
+        /// <summary>
+        /// Update in database
+        /// </summary>
+        /// <param name="brand"></param>
+        /// <returns></returns>
+        public int Update(tb_ThuongHieu brand)
+        {
+            var brandUpdate = GetBrand(brand.MaThuongHieu);
+            brandUpdate.TenThuongHieu = brand.TenThuongHieu;
+            brandUpdate.DaXoa = brand.DaXoa;
+            return _dataContext.SaveChanges();
+        }
     }
 }
