@@ -1,10 +1,15 @@
-﻿using APIs.Model;
+﻿using System.Net;
+using System.Net.Mime;
+using APIs.Model;
 using DTO;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.ML;
 using ModelsTrainer;
 
 namespace APIs.Controllers
 {
+
     [ApiController]
     public class ProductController : ControllerBase
     {
@@ -27,7 +32,7 @@ namespace APIs.Controllers
                 {
                     var filePath = Path.Combine(projectFolder, @"GUI/assets/image/" + item.UrlHinh);
 
-                    Byte[] b = System.IO.File.ReadAllBytes(filePath);   // You can use your own method over here.
+                    Byte[] b = System.IO.File.ReadAllBytes(filePath);   // You can use your own method over here.         
                     image = File(b, "image/jpeg");
                 }
 
@@ -56,7 +61,7 @@ namespace APIs.Controllers
                 {
                     var filePath = Path.Combine(projectFolder, @"GUI/assets/image/" + item.UrlHinh);
 
-                    Byte[] b = System.IO.File.ReadAllBytes(filePath);   // You can use your own method over here.
+                    Byte[] b = System.IO.File.ReadAllBytes(filePath);   // You can use your own method over here.         
                     image = File(b, "image/jpeg");
                 }
 
@@ -83,7 +88,7 @@ namespace APIs.Controllers
             {
                 var filePath = Path.Combine(projectFolder, @"GUI/assets/image/" + item.UrlHinh);
 
-                Byte[] b = System.IO.File.ReadAllBytes(filePath);   // You can use your own method over here.
+                Byte[] b = System.IO.File.ReadAllBytes(filePath);   // You can use your own method over here.         
                 image = File(b, "image/jpeg");
             }
 
@@ -109,7 +114,7 @@ namespace APIs.Controllers
                 {
                     var filePath = Path.Combine(projectFolder, @"GUI/assets/image/" + item.UrlHinh);
 
-                    Byte[] b = System.IO.File.ReadAllBytes(filePath);   // You can use your own method over here.
+                    Byte[] b = System.IO.File.ReadAllBytes(filePath);   // You can use your own method over here.         
                     image = File(b, "image/jpeg");
                 }
 
