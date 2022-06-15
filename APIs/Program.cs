@@ -5,11 +5,16 @@ namespace APIs
 {
     public class Program
     {
+        static string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AlowOrigin", options => options.AllowAnyOrigin());
+            });
 
             builder.Services.AddControllers().AddNewtonsoftJson(options =>
             {
@@ -30,6 +35,8 @@ namespace APIs
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseCors(cors => cors.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
             app.UseHttpsRedirection();
 
