@@ -3,10 +3,12 @@ using Microsoft.ML;
 using Microsoft.ML.Data;
 using Microsoft.ML.Trainers;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using DTO;
 
 namespace ModelsTrainer
 {
@@ -127,6 +129,43 @@ namespace ModelsTrainer
             foreach (var t in top5)
                 Console.WriteLine($"  Score:{t.Score}\tProduct: {t.ProductID}");
             Console.ReadKey();
+        }
+
+        public static IEnumerable<tb_SanPham> GetProductRecommend(string productId)
+        {
+            string projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).FullName;
+
+            string modelPath =
+                Path.Combine(projectFolder, @"ModelsTrainer\\Data\\MLModelProductRecommender.zip");
+
+            var products = SanPhamBLL.GetProducts();
+            int id = products.FindIndex(x => x.MaSanPham == productId) + 1;
+
+            MLContext mlContext = new MLContext();
+            // Load model.
+            using (var file = File.OpenRead(modelPath))
+            {
+                var model = mlContext.Model.Load(file, out DataViewSchema schema);
+
+                // Create a prediction engine from the model for feeding new data.
+                var engine = mlContext.Model
+                    .CreatePredictionEngine<ProductInput, ProductPrediction>(model);
+
+                List<(tb_SanPham, float)> top5 = new List<(tb_SanPham, float)>();
+                for (int i = 1; i <= products.Count; i++)
+                {
+                    var score = engine.Predict(new ProductInput()
+                    {
+                        ProductId = Convert.ToUInt32(id),
+                        ProductIdCoPurchased = Convert.ToUInt32(i)
+                    }).Score;
+
+                    top5.Add((products[i - 1], score));
+                }
+
+                top5 = top5.OrderByDescending(x => x.Item2).ToList();
+                return top5.Take(5).Select(x => x.Item1);
+            }
         }
 
         public static async Task GenerateSampleData()

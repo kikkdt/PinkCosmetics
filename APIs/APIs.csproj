@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.5">
       <PrivateAssets>all</PrivateAssets>
@@ -19,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj" />
+    <ProjectReference Include="..\ModelsTrainer\ModelsTrainer.csproj" />
   </ItemGroup>
 
 </Project>
